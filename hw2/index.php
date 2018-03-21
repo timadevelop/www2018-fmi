@@ -101,6 +101,8 @@ class Data
     // write to db
     try
     {
+      // I could write a code for creating database hw2 from host,
+      // but I think that it's not a purpose of this hw
       $pdo = new PDO('mysql:host=localhost;dbname=hw2', 'root', '') or die ("Cannot connect");
       $pdo->exec("SET NAMES = utf8");
 
@@ -139,8 +141,6 @@ class Data
       // $pdo->close();
       // print_r($response);
       echo '</table><hr>';
-
-
     }
     catch(PDOException $e)
     {
