@@ -190,6 +190,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($num))
   if(count($errs) < 1)
   {
     $data->writeToDB();
+    // remove these 2 lines below to see DB content after writing to DB
+    header('Location: '.$_SERVER['PHP_SELF']); // return to the same page as get
+    die;
+
   }
   else
   {
