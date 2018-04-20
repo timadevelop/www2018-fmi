@@ -1,0 +1,168 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', serif;
+  font-size: 14px;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 980px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+
+* {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+
+li {
+  list-style: none;
+}
+
+b {
+  font-weight: bold;
+}
+
+
+.global-nav > * {
+  float: right;
+  margin: 10px;
+}
+
+.clearfix:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+
+.green-color {
+  color: #97BF0E;
+}
+
+.btn {
+  color: white;
+  background-color: #97BF0E;
+  border-radius: 10px;
+  padding: 5px 7px;
+  border: none;
+  text-decoration: none;
+}
+
+button:hover,
+.bth:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.btn-out {
+  color: #97BF0E;
+  border: 1px solid #97BF0E;
+  background: none;
+}
+
+.side-nav {
+  display: inline-block;
+  width: 30%;
+  margin-right: 1%;
+  vertical-align: top;
+  /* margin-right: 20px; */
+  /* float: left; */
+  /* height: 100%; */
+  /* width: 300px; */
+}
+.discipline-description {
+  display: inline-block;
+  /* height: 100%; */
+  width: 67%;
+  /* overflow: auto; */
+}
+
+.side-nav .disc-link {
+  display: block;
+  /* width: 100%; */
+  color: black;
+  border-bottom: 1px solid #D5D5D5;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px;
+}
+
+
+.side-nav .disc-link:active,
+.side-nav .active {
+  background-color: #97BF0E;
+  color: white;
+  border: none;
+}
+
+
+.horizontal > * {
+  display: inline-block;
+}
+
+
+.discipline-description > *,
+#comments-form > *,
+.discipline-comments > *{
+  display: block;
+  margin: 10px 0px;
+}
+
+/* .content > * { */
+/*   display: inline-block; */
+/*   vertical-align: top; */
+/* } */
+/*  */
+#comments-form > textarea{
+  width: 100%;
+  min-height: 100px;
+  text-indent: 10px;
+  padding-top:10px;
+  border-radius: 5px;
+}
+
+/* ::-webkit-input-placeholder { */
+/*   paddding: 10px 10px; */
+/* } */
+/*  */
+/* :-moz-placeholder { /* Firefox 18- */ */
+/*   paddding: 10px 10px; */
+/* } */
+/*  */
+/* ::-moz-placeholder {  /* Firefox 19+ */ */
+/*   paddding: 10px 10px; */
+/* } */
+/*  */
+/* :-ms-input-placeholder {   */
+/*   paddding: 10px 10px; */
+/* } */
+/*  */
+/* input[type=search] */
+/* { */
+/* } */
+/*  */
+
+.discipline-comments {
+  padding: 0;
+}
+
+.discipline-comments > li a {
+  text-decoration: none;
+  color: #17AAEF;
+}
+
+.discipline-comment p {
+  margin: 20px 5px;
+}
