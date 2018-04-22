@@ -37,25 +37,26 @@ b {
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 5px 0;
-    padding: 0; 
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+  padding: 0;
 }
+
 .global-nav > * {
   float: right;
   margin: 10px;
 }
 
 .clearfix:after {
-   content: " ";
-   display: block;
-   height: 0;
-   clear: both;
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
 }
-
 
 .green-color {
   color: #97BF0E;
@@ -88,21 +89,15 @@ button:hover,
   width: 30%;
   margin-right: 1%;
   vertical-align: top;
-  /* margin-right: 20px; */
-  /* float: left; */
-  /* height: 100%; */
-  /* width: 300px; */
 }
+
 .discipline-description {
   display: inline-block;
-  /* height: 100%; */
   width: 67%;
-  /* overflow: auto; */
 }
 
 .side-nav .disc-link {
   display: block;
-  /* width: 100%; */
   color: #888;
   border-bottom: 1px solid #D5D5D5;
   text-transform: uppercase;
@@ -124,8 +119,8 @@ button:hover,
 }
 
 
-.discipline-description > *,
 #comments-form > *,
+.discipline-description > *,
 .discipline-comments > *{
   display: block;
   margin: 10px 0px;
@@ -135,11 +130,6 @@ button:hover,
   margin: 0;
 }
 
-/* .content > * { */
-/*   display: inline-block; */
-/*   vertical-align: top; */
-/* } */
-/*  */
 #comments-form > textarea{
   font-size: 12px;
   width: 100%;
