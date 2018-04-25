@@ -50,7 +50,7 @@ name=nginx repo
 baseurl=http://nginx.org/packages/OS/OSRELEASE/$basearch/
 gpgcheck=0
 enabled=1</code>
-<figcaption>Код 1. nginx.repo за RHEL <a href="#r4">[4]</a></figcaption>
+<figcaption>Код 1. nginx.repo за RHEL  <a href="#r4">[4]</a></figcaption>
 </figure>
 
               <p>Заменете "OS" с "rhel" или "centos" в зависимост от използваното разпределение и "OSRELEASE" с "6" или "7", съответно за версии 6.x или 7.x.</p>
@@ -64,20 +64,20 @@ enabled=1</code>
 ## Сменете $release с вашия Ubuntu-релиз.
 deb http://nginx.org/packages/ubuntu/ $release nginx
 deb-src http://nginx.org/packages/ubuntu/ $release nginx
-</code><figcaption>Код 2. shell на добавяне на репо за Ubuntu <a href="#r4">[4]</a></figcaption>
+</code><figcaption>Код 2. shell на добавяне на репо за Ubuntu  <a href="#r4">[4]</a></figcaption>
                 </figure>
                 <p>Например за Ubuntu 16.04 (Xenial):</p>
                 <figure><code>
 deb http://nginx.org/packages/ubuntu/ xenial nginx
 deb-src http://nginx.org/packages/ubuntu/ xenial nginx
 </code>
-<figcaption>Код 3. shell за добавяне на репо за Ubuntu 16.04 <a href="#r4">[4]</a></figcaption>
+<figcaption>Код 3. shell за добавяне на репо за Ubuntu 16.04  <a href="#r4">[4]</a></figcaption>
 </figure>
                 <p>След това исползвайки своят shell, изпълнете следите команди:</p>
                 <figure><code>
 sudo apt-get update
 sudo apt-get install nginx</code>
-<figcaption>Код 4. shell код за инсталиране на nginx c помощта на apt-get <a href="#r4">[4]</a></figcaption>
+<figcaption>Код 4. shell код за инсталиране на nginx c помощта на apt-get  <a href="#r4">[4]</a></figcaption>
                 </figure>
               </li>
               <li>
@@ -85,11 +85,11 @@ sudo apt-get install nginx</code>
                 <p>Просто изпълнете следното в своят shell:</p>
                 <code>zypper addrepo -G -t yum -c 'http://nginx.org/packages/sles/12' nginx
 zypper install nginx</code>
-<figcaption>Код 5. shell код за инсталиране на nginx c помощта на zypper(opensuse/suse) <a href="#r4">[4]</a></figcaption>
+<figcaption>Код 5. shell код за инсталиране на nginx c помощта на zypper(opensuse/suse)  <a href="#r4">[4]</a></figcaption>
               </figure>
               </ul>
             </article>
-            <article href="intro">
+            <article id="intro">
               <h1>Как работи nginx</h1>
               <p>nginx има един главен процес и няколко работни процеси. Основната цел на главния процес е четене и проверка на конфигурацията и да поддържа работни процеси. Работническите процеси извършват фактическа обработка на заявките. nginx използва модел, базиран на събития, и механизми, зависими от операциона система, за ефективно разпределяне на заявките между работническите процеси. Броят работни процеси е дефиниран в конфигурационния файл и може да бъде фиксиран за дадена конфигурация или автоматично да бъде коригиран спрямо броя на наличните CPU ядра.
 
@@ -113,7 +113,7 @@ zypper install nginx</code>
               <p>Промените, направени в конфигурационния файл, няма да бъдат приложени, докато командата за презареждане на конфигурацията не бъде изпратена на nginx или рестартирана. За да презаредите конфигурацията, изпълнете:</p>
               <figure><code>
 nginx -s reload</code>
-<figcaption>Код 6. Команда за рестартиране на nginx <a href="#r5">[5]</a></figcaption>
+<figcaption>Код 6. Команда за рестартиране на nginx  <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>
                 След като главният процес получи сигнала за повторно зареждане на конфигурацията, той проверява валидността на синтаксиса на новия конфигурационен файл и се опитва да приложи конфигурацията, предоставена в него. Ако това е успешно, главният процес стартира нови работни процеси и изпраща съобщения до стари работнически процеси, изисквайки ги да се изключат. В противен случай главният процес връща обратно промените и продължава да работи със старата конфигурация. Старите работнически процеси, получаващи команда за спиране, прекратяват приемането на нови връзки и продължават да обслужват текущите заявки, докато не бъдат изпратени всички такива заявки. След това старият работник процеси излиза.
@@ -126,15 +126,15 @@ nginx -s reload</code>
                 за да изпратите QUIT сигнала, водещ до графичното изключване на nginx, изпълнете:</p>
               <figure><code>
 kill -s QUIT 1628</code>
-<figcaption>Код 7. Команда за QUIT сигнал за nginx <a href="#r5">[5]</a></figcaption>
+<figcaption>Код 7. Команда за QUIT сигнал за nginx  <a href="#r5">[5]</a></figcaption>
             </figure>
               <p>Разбира се, освен това винаги можете да намерите pid на nginx използвайки linux утилита:</p>
               <figure><code>
 ps -ax | grep nginx</code>
-<figcaption>Код 8. Команда за търсене на pid на nginx с помощта на ps <a href="#r5">[5]</a></figcaption>
+<figcaption>Код 8. Команда за търсене на pid на nginx с помощта на ps  <a href="#r5">[5]</a></figcaption>
             </figure>
             </article>
-            <article class="file-structure">
+            <article id="file-structure">
               <h1>Структура на конфигурационен файл</h1>
               <p>nginx се състои от модули, които се контролират от директивите, посочени в конфигурационния файл.
                 Директивите са разделени на прости директиви и директиви за блокиране.
@@ -156,7 +156,7 @@ server {
         root /data/images;
     }
 }</code>
-<figcaption>Код 9. Пример на конфигурационен файл<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 9. Пример на конфигурационен файл <a href="#r5">[5]</a></figcaption>
             </figure>
             </article>
             <article id="static-serve">
@@ -186,7 +186,7 @@ http {
 
   }
 }</code>
-<figcaption>Код 10. Дефениране на блокове в nginx<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 10. Дефениране на блокове в nginx <a href="#r5">[5]</a></figcaption>
             </figure>
               <p>
                 Като цяло конфигурационният файл може да съдържа няколко <code>server</code> блока,
@@ -199,7 +199,7 @@ http {
 location / {
   root /data/www
 }</code>
-<figcaption>Код 11. location блок в nginx<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 11. location блок в nginx <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>
                 Този блок <code>location</code> посочва префикса "/" в сравнение с URI от заявката.
@@ -215,7 +215,7 @@ location / {
 location /images/ {
   root /data;
 }</code>
-<figcaption>Код 12. location блок с префикс /images/ в nginx<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 12. location блок с префикс /images/ в nginx <a href="#r5">[5]</a></figcaption>
             </figure>
               <p>
                 Това ще е съвпадение за заявките, започващи с <code>/images/</code></figure>
@@ -234,7 +234,7 @@ server {
     root /data;
   }
 }</code>
-<figcaption>Код 13. Получен минимален конфигурационен файл за работещ сървър<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 13. Получен минимален конфигурационен файл за работещ сървър <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>
                 Това вече е работна конфигурация на сървър, който слуша на стандартен порт 80 и е достъпен на локалната машина на
@@ -257,7 +257,7 @@ server {
               </p>
               <figure><code>
 nginx -s reload</code>
-<figcaption>Код 6. Команда за рестартиране на nginx <a href="#r5">[5]</a></figcaption>
+<figcaption>Код 6. Команда за рестартиране на nginx  <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>Ако нещо не работи както трябва може да намерите причина в <code>access.log</code> или <code>error.log</code> в директорията <code>/usr/local/nginx/logs</code> или <code>/var/log/nginx</code></p>
             </article>
@@ -274,7 +274,7 @@ server {
   location / {
   }
 }</code>
-<figcaption>Код 14. Конфигурация за прост сървър<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 14. Конфигурация за прост сървър <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>
                 Това ще бъде обикновен сървър, който слуша порт 8080
@@ -300,7 +300,7 @@ server {
     root /data;
   }
 }</code>
-<figcaption>Код 15. Конфигурация за прост proxy сървър за /<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 15. Конфигурация за прост proxy сървър за / <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>
                 Ще променим втория блок <code>location</code>, който понастоящем картографира заявките с <code>/images/</code> prefix към файловете в директорията <code>/data/images</code>,
@@ -312,7 +312,7 @@ server {
 location ~ \.(gif|jpg|png)$ {
   root /data/images;
 }</code>
-<figcaption>Код 16. Блок с регулярен израз за хващане на изображения<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 16. Блок с регулярен израз за хващане на изображения <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>
                 Параметърът е регулярен израз, съвпадащ с всички URI, завършващи с .gif, .jpg или .png.
@@ -333,7 +333,7 @@ server {
     root /data/images;
   }
 }</code>
-<figcaption>Код 17. Конфигурация за прост proxy сървър<a href="#r5">[5]</a></figcaption>
+<figcaption>Код 17. Конфигурация за прост proxy сървър <a href="#r5">[5]</a></figcaption>
               </figure>
               <p>
                 Този сървър ще филтрира заявки, завършващи с .gif, .jpg или .png, и ще ги премести в директорията <code>/data/images</code> (чрез добавяне на URI към параметъра на <code>root</code> директивата) и ще предаде всички останали заявки на сървъра с прокси сървъри, конфигуриран по-горе.
@@ -360,7 +360,7 @@ server {
               <p>Копирайте статичните файлове на уебсайта си в тази папка. Можете да използвате командата <code>scp</code> от локалната машина. <code>cd</code> в директорията на уебсайта си и изпълнете:</p>
               <figure><code>
 scp -r * root@@198.199.103.100:/var/www/jgefroh.com</code>
-<figcaption>Код 19. Команда за сваляне на файли с помощта на scp<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 19. Команда за сваляне на файли с помощта на scp <a href="#r6">[6]</a></figcaption>
               </figure>
               <p>Не забравяйте да замените <b>198.199.103.100</b> и <b>jgefroh.com</b> със стойности, които са подходящи за Вас.</p>
               <p><b>4.</b> Конфигурирайте NGINX</p>
@@ -382,7 +382,7 @@ server {
     try_files $uri $uri/ =404;
   }
 }</code>
-<figcaption>Код 20. Конфигурация за прост сървър на статичен уебсайт<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 20. Конфигурация за прост сървър на статичен уебсайт <a href="#r6">[6]</a></figcaption>
               </figure>
               <p>Тази конфигурация разказва на Nginx няколко неща:</p>
               <ol>
@@ -397,7 +397,7 @@ server {
 # ln -s <source_file> <destination_file>
 ln -s /etc/nginx/sites-available/jgefroh.com /etc/nginx/sites-enabled/jgefroh.com
 </code>
-<figcaption>Код 21. Команда за създаване на symlink<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 21. Команда за създаване на symlink <a href="#r6">[6]</a></figcaption>
               </figure>
               <p>И в края на краищата рестартирайне nginx: <code> sudo systemctl restart nginx </code></p>
               <p>Сега всичко трябва да работи и вашата index-страница тряббва да бъде достъпна на адреса </p>
@@ -414,7 +414,7 @@ sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
 sudo certbot --nginx certonly</code>
-<figcaption>Код 22. Команди за конфигурация на letsencrypt<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 22. Команди за конфигурация на letsencrypt <a href="#r6">[6]</a></figcaption>
                   </figure>
                   <p>Следвайте инструкциите. Това ще инсталира сертификати в <code>/etc/letsencrypt/live/jgefroh.com/</code></p>
                   <p>Активиране на автоматично подновяване на сертификати:</p>
@@ -431,7 +431,7 @@ server {
   ssl on;
   ssl_certificate /etc/letsencrypt/live/jgefroh.com/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/jgefroh.com/privkey.pem;</code>
-  <figcaption>Код 23. Конфигурация за ssl в nginx<a href="#r6">[6]</a></figcaption>
+  <figcaption>Код 23. Конфигурация за ssl в nginx <a href="#r6">[6]</a></figcaption>
                   </figure>
                   <p>Това казва на nginx да активира SSL и да използва посочения ключ и сертификат за този сървър.</p>
                   <p>Вече имаме и проблем: Порт 80, който слушаме в момента, е за HTTP връзки. SSL връзките използват порт 443. Решението? Променете порта от 80 на 443.</p>
@@ -441,7 +441,7 @@ server {
   listen [::]:443 default_server;
   #... all other content
 }</code>
-<figcaption>Код 24. Фикс за 443 порт<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 24. Фикс за 443 порт <a href="#r6">[6]</a></figcaption>
                   </figure>
                   <p>Това обаче нарушава хората, които отиват на уебсайта без <code>https://</code> изрично в URL адреса. За да коригираме това, ще пренасочим HTTP заявки към URL адреса на HTTPS. Добавете следния нов блок <code>server</code> след <code> server </code> блок на HTTPS (443):</p>
                   <figure><code>
@@ -450,7 +450,7 @@ server {
   server_name jgefroh.com www.jgefroh.com;
   rewrite ^ https://$host$request_uri? permanent;
 }</code>
-<figcaption>Код 25. Пренасочване за https<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 25. Пренасочване за https <a href="#r6">[6]</a></figcaption>
                   </figure>
                   <p>Това ще пренасочи всички заявки към <b>jgefroh.com</b> и <b>www.jgefroh.com</b> на порт 80 към HTTPS URL адреса.
                     Сега рестартирайте NGINX с помощта на <code>systemctl</code> и SSL трябва да работи.</p>
@@ -475,7 +475,7 @@ server {
   #... all other content
 }
                   </code>
-<figcaption>Код 26. Конфигурация за активиране на http/2<a href="#r6">[6]</a></figcaption></figure>
+<figcaption>Код 26. Конфигурация за активиране на http/2 <a href="#r6">[6]</a></figcaption></figure>
                   <h2>Активирайте gzip компресия</h2>
                   <p>gzip компресията може значително да намали размера на файловете по време на предаването (понякога с над 80%).</p>
                   <p>Добавете следното в <code>server</code> блока: </p>
@@ -486,7 +486,7 @@ server {
   gzip_types application/javascript image/* text/css;
   gunzip on;
 }</code>
-<figcaption>Код 27. Конфигурация за активиране на gzip<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 27. Конфигурация за активиране на gzip <a href="#r6">[6]</a></figcaption>
                   </figure>
                   <p>Това направи javascript файловете, изображенията и CSS файловете винаги да са компресирани.</p>
                   <p><b>Внимание:</b></p>
@@ -504,7 +504,7 @@ server {
     expires 7d;
   }
 }  </code>
-<figcaption>Код 28. Конфигурация за кеширане на страна на клиента<a href="#r6">[6]</a></figcaption>
+<figcaption>Код 28. Конфигурация за кеширане на страна на клиента <a href="#r6">[6]</a></figcaption>
                 </figure>
                   <p>Проверете колко често се променят различните типове файлове и след това ги изтрийте в подходящо време. Ако файловете <b>.css</b> и <b>.js</b> се променят редовно, трябва да настроите изтичането да бъде по-кратко. Ако изображенията като <b>.jpg</b> никога не се променят, можете да ги настроите да изтичат месеци от сега нататък.</p>
 
