@@ -67,6 +67,10 @@ figure figcaption {
   color: grey;
 }
 
+figure code {
+    width: 100%;
+}
+
 .content {
   padding-left: 10px;
 }
@@ -77,32 +81,6 @@ figure figcaption {
   display: block;
   height: 0;
   clear: both;
-}
-
-.green-color {
-  color: #97BF0E;
-}
-
-.btn {
-  font-size: 13px;
-  color: white;
-  background-color: #97BF0E;
-  border-radius: 10px;
-  padding: 5px 9px;
-  border: none;
-  text-decoration: none;
-}
-
-button:hover,
-.bth:hover {
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-.btn-out {
-  color: #97BF0E;
-  border: 1px solid #97BF0E;
-  background: none;
 }
 
 .side-nav {
@@ -129,70 +107,19 @@ button:hover,
   padding: 7px;
 }
 
+.side-nav .disc-link:hover{
+  border-color: #539482;
+  color: #539482;
+}
 
 .side-nav .disc-link:active,
 .side-nav .active {
-  background-color: #97BF0E;
+  background-color: #539482;
   color: white;
   border: none;
 }
 
 
 .horizontal > * {
-  display: inline-block;
-}
-
-
-#comments-form > *,
-.discipline-description > *,
-.discipline-comments > *{
-  display: block;
-  margin: 10px 0px;
-}
-
-.discipline-description > header {
-  margin: 0;
-}
-
-#comments-form > textarea{
-  font-size: 12px;
-  width: 100%;
-  min-height: 70px;
-  text-indent: 10px;
-  padding-top: 10px;
-  border-radius: 5px;
-}
-
-/* ::-webkit-input-placeholder { */
-/*   paddding: 10px 10px; */
-/* } */
-/*  */
-/* :-moz-placeholder { /* Firefox 18- */ */
-/*   paddding: 10px 10px; */
-/* } */
-/*  */
-/* ::-moz-placeholder {  /* Firefox 19+ */ */
-/*   paddding: 10px 10px; */
-/* } */
-/*  */
-/* :-ms-input-placeholder {   */
-/*   paddding: 10px 10px; */
-/* } */
-/*  */
-/* input[type=search] */
-/* { */
-/* } */
-/*  */
-
-.discipline-comments {
-  padding: 0;
-}
-
-.discipline-comments > li a {
-  text-decoration: none;
-  color: #17AAEF;
-}
-
-.discipline-comment p {
-  margin: 15px 5px;
+  /* display: inline-block; */
 }
