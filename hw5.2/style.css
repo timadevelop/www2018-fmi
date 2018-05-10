@@ -1,0 +1,110 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', serif;
+  font-size: 14px;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 980px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+
+.green-background {
+  background-color: #97BF0E;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.registration {
+  max-width: 370px;
+  margin: 30px auto;
+}
+.registration h1 {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+
+.registration > form {
+  background-color: #F5F5F0;
+  border: 2px solid #999;
+  border-top: none;
+  padding-top: 20px;
+}
+
+.registration > form > * {
+  display: block;
+  margin: auto;
+}
+
+.registration > form > * {
+  height: 32px;
+  min-width: 326px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.registration > form > input {
+  border: 1px solid #dcdcdc;
+  color: #959495;
+  text-indent: 10px;
+}
+
+.registration > form > input:focus{
+  outline: 2px solid #c6c6c6;
+}
+
+.registration > form > input::placeholder {
+  color: #c6c6c6;
+}
+
+
+.registration > form > p#message {
+}
+
+.registration > form > p.show {
+  display: block;
+  margin: 0 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  text-align: center;
+  height: min-content;
+}
+.registration > form > p.hide {
+  display: none;
+}
+
+
+.registration > form > p.success {
+  background-color: #97BF0E;
+  color: white;
+}
+
+
+.registration > form > p.warn {
+  background-color: #e74c3c;
+  color: white;
+}
