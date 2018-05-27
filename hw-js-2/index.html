@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="greenBackground">
+        <h1 id="h">Домашно JS</h1>
+      </div>
+      <div id="messageContainer">
+        <h1 id="message">Game is started...</h1>
+      </div>
+      <table id="board">
+        <tr>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell0" onclick="place(0)"/></td>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell1" onclick="place(1)"/></td>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell2" onclick="place(2)"/></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell3" onclick="place(3)"/></td>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell4" onclick="place(4)"/></td>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell5" onclick="place(5)"/></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell6" onclick="place(6)"/></td>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell7" onclick="place(7)"/></td>
+          <td align="center"><img src="images/transp.png" class="cell" id="cell8" onclick="place(8)"/></td>
+        </tr>
+      </table>
+      <button onClick="restart()" id="newGame">New Game</button>
+    </div>
+  </body>
+</html>
