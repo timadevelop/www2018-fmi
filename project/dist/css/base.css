@@ -9,10 +9,10 @@ html {
 
 /* Base Style */
 body {
-  font-family: "Catamaran", "Georgia", "Helvetica", "Arial", sans-serif;
+  background: #f9f9f9;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 15px;
-  color: #222;
-  padding: 0 5%; }
+  color: #999; }
 
 li {
   list-style-type: none;
@@ -55,8 +55,12 @@ li {
 .horizontal {
   flex-direction: row; }
 
+.mt30,
+.container.mt30 {
+  margin-top: 30px; }
+
 .card {
-  background: white;
+  background: #fff;
   border-radius: 3px;
   transition: 0.3s;
   padding: 10px;
@@ -72,25 +76,37 @@ li {
   text-align: center; }
 
 .btn {
-  border: 1px solid #9E9E9E;
+  border: 1px solid #999;
   border-radius: 3px;
   text-align: center;
   padding: 3px 10px;
   margin: 2px;
-  color: #9E9E9E;
+  color: #999;
   transition: all 0.3s ease-in-out; }
 
 .btn:hover {
-  color: #111;
-  border-color: #111; }
+  color: #000;
+  border-color: #000; }
 
 .bold {
   font-weight: bold; }
 
 /* Grid */
 .container {
-  max-width: 800px;
-  margin: 1.5rem auto; }
+  max-width: 1100px;
+  margin: 0rem auto; }
+
+.block {
+  padding: 20px;
+  background: #fff;
+  border-radius: 3px;
+  border-bottom: 1px solid #e8e8e8; }
+
+.container > .flex ~ .flex {
+  margin-left: 30px; }
+
+.container > .flex > .block {
+  margin-bottom: 20px; }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
@@ -123,11 +139,11 @@ h6 {
 /* Links */
 a {
   text-decoration: none;
-  color: #111; }
+  color: #999; }
 
 a:hover,
 a:focus {
-  color: #999;
+  color: #000;
   cursor: pointer; }
 
 /* Lists */
@@ -140,7 +156,6 @@ nav {
   margin-bottom: 1.5rem; }
 
 .blocknav a {
-  font-family: "Catamaran", "Helvetica", "Arial", sans-serif;
   display: block;
   text-align: center;
   text-decoration: none; }
@@ -148,11 +163,13 @@ nav {
 .blocknav a:link,
 .blocknav a:visited,
 .blocknav a:active {
-  color: #000; }
+  color: #999;
+  opacity: .8; }
 
 .blocknav a:hover,
 .blocknav a:focus {
-  color: #999; }
+  color: #999;
+  opacity: .5; }
 
 .blocknav li {
   list-style-type: none;
@@ -190,7 +207,7 @@ button, .button, input[class="submit"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: #772953;
+  color: #fff;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -201,7 +218,7 @@ button, .button, input[class="submit"] {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  border: 1px solid #772953;
+  border: 1px solid #00b27f;
   cursor: pointer;
   box-sizing: border-box; }
 
@@ -209,7 +226,7 @@ button, .button, input[class="submit"] {
 p#warningName,
 p#warningEmail,
 p#warningComment {
-  color: red; }
+  color: #d63031; }
 
 .ui-form input[type=text],
 .ui-form input[type=email],
@@ -224,14 +241,13 @@ textarea {
   margin: 2px 0;
   padding-left: 0.5em;
   font-size: 1.0em;
-  font-family: 'Arial', sans-serif;
   box-sizing: border-box; }
 
 input:focus,
 textarea:focus {
   border: 0px;
   outline: 0px;
-  border-bottom: 1px solid #9E9E9E; }
+  border-bottom: 1px solid #999; }
 
 input[type=submit]:focus {
   border: none; }
@@ -367,7 +383,7 @@ i[class^="fa"] {
   z-index: 5;
   margin: 0 0 60px;
   text-align: center;
-  color: #9E9E9E;
+  color: #999;
   font-size: 18px;
   font-weight: normal; }
 
@@ -403,10 +419,9 @@ i[class^="fa"] {
   width: 100%;
   padding: 0 10px;
   line-height: 40px;
-  font-family: 'Roboto', sans-serif;
   background: none;
   border-width: 0;
-  border-bottom: 2px solid #4a90e2;
+  border-bottom: 2px solid #0984e3;
   transition: all 0.2s ease; }
 
 .form-row label {
@@ -420,7 +435,7 @@ i[class^="fa"] {
 
 .form-row input:focus {
   outline: 0;
-  border-color: #F77A52; }
+  border-color: #d63031; }
 
 .form-row input:focus + label,
 .form-row input:valid + label {
@@ -429,15 +444,15 @@ i[class^="fa"] {
   font-size: 14px;
   font-weight: 400;
   outline: 0;
-  border-color: #F77A52;
-  color: #4a90e2; }
+  border-color: #d63031;
+  color: #0984e3; }
 
 .ui-form input[type="submit"],
 .form-btn {
   width: 100%;
   padding: 0;
   line-height: 42px;
-  background: #4a90e2;
+  background: #0984e3;
   border-width: 0;
   color: white;
   font-size: 15px;
@@ -459,15 +474,14 @@ i[class^="fa"] {
   background: grey; }
 
 .ui-form #google-login {
-  background: #F77A52; }
+  background: #d63031; }
 
 .form-row select {
   display: block;
   width: 100%;
   padding: 0 10px;
-  font-family: 'Roboto', sans-serif;
   border-width: 0;
-  border-bottom: 2px solid #4a90e2; }
+  border-bottom: 2px solid #0984e3; }
 
 #add_btn {
   align-self: center;

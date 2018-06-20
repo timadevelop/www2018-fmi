@@ -16,12 +16,10 @@ html {
 /* Base Style */
 
 body {
-
+  background: $background-grey;
   font-family: $main-font;
   font-size: 15px;
-  color: #222;
-  // border-top: 5px solid $color-accent;
-  padding: 0 5%;
+  color: $color-grey;
 }
 
 li {
@@ -75,10 +73,15 @@ li {
 	flex-direction: row;
 }
 
+.mt30,
+.container.mt30{
+  margin-top: 30px;
+}
+
+
 .card {
-  background: white;
+  background: $color-white;
   border-radius: 3px;
-  // box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   padding: 10px;
   margin: 5px;
@@ -116,11 +119,25 @@ li {
 /* Grid */
 
 .container {
-  max-width: 800px;
-  margin: 1.5rem auto;
+  max-width: 1100px;
+  margin: 0rem auto;
+}
+
+.block {
+  padding: 20px;
+  background: $color-white;
+  border-radius: 3px;
+  border-bottom: 1px solid $color-border;
 }
 
 
+.container > .flex ~ .flex {
+  margin-left: 30px;
+}
+
+.container > .flex > .block {
+  margin-bottom: 20px;
+}
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -168,12 +185,12 @@ h6 {
 
 a {
   text-decoration: none;
-  color: $color-black;
+  color: $color-grey;
 }
 
 a:hover,
 a:focus {
-  color: #999;
+  color: $color-black;
   cursor: pointer;
 }
 
@@ -202,7 +219,7 @@ nav {
 }
 
 .blocknav a {
-  font-family: $menu-font;
+  // font-family: $menu-font;
   display: block;
   text-align: center;
   text-decoration: none;
@@ -212,12 +229,14 @@ nav {
 .blocknav a:link,
 .blocknav a:visited,
 .blocknav a:active {
-  color: #000;
+  color: $color-grey;
+  opacity: .8;
 }
 
 .blocknav a:hover,
 .blocknav a:focus {
-  color: #999;
+  color: $color-grey;
+  opacity: .5;
 }
 
 .blocknav li {
@@ -266,7 +285,7 @@ button, .button, input[class="submit"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: $color-accent;
+  color: $color-white;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -277,7 +296,7 @@ button, .button, input[class="submit"] {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  border: 1px solid $color-accent;
+  border: 1px solid $color-green;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -288,7 +307,7 @@ button, .button, input[class="submit"] {
 p#warningName,
 p#warningEmail,
 p#warningComment {
-  color: red;
+  color: $color-red;
 }
 
 .ui-form input[type=text],
@@ -305,7 +324,7 @@ textarea {
   margin: 2px 0;
   padding-left: 0.5em;
   font-size: 1.0em;
-  font-family: 'Arial', sans-serif;
+  // font-family: 'Arial', sans-serif;
   box-sizing: border-box;
 }
 
@@ -530,7 +549,7 @@ ul.blocknav {
   width: 100%;
   padding: 0 10px;
   line-height: 40px;
-  font-family: 'Roboto', sans-serif;
+  // font-family: 'Roboto', sans-serif;
   background: none;
   border-width: 0;
   border-bottom: 2px solid $color-blue;
@@ -596,7 +615,7 @@ ul.blocknav {
   display: block;
   width: 100%;
   padding: 0 10px;
-  font-family: 'Roboto', sans-serif;
+  // font-family: 'Roboto', sans-serif;
   border-width: 0;
   border-bottom: 2px solid $color-blue;
 }
