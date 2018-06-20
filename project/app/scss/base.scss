@@ -1,11 +1,5 @@
-$color-accent: #772953;
-$main-font: 'Catamaran', 'Georgia', 'Helvetica', 'Arial', sans-serif;
-$menu-font: 'Catamaran', 'Helvetica', 'Arial', sans-serif;
+@import './colors.scss';
 
-$color-grey: #9E9E9E;
-$color-blue: #4a90e2;
-$color-red: #F77A52;
-$color-black: #111;
 /* Minimal Reset */
 
 * {
@@ -431,7 +425,7 @@ i[class^="fa"] {
 }
 
 #copyright {
-float: right;
+  float: right;
 }
 
 .tagbox {
@@ -656,3 +650,5 @@ ul.blocknav {
 .align-self-center {
   align-self: center;
 }
+
+@import './trip.scss';

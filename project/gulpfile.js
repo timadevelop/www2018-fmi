@@ -26,10 +26,10 @@ gulp.task('js', () =>
         filename: 'app.js'
       }
     }))
-    // .pipe(babel({
-    //   presets: ['env']
-    // }))
-    // .pipe(uglify())
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
 );
 
