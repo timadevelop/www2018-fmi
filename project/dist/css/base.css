@@ -635,3 +635,15 @@ ul.items {
   .blocknav li {
     display: inline-block;
     margin-right: 1em; } }
+
+.newForm * {
+  margin-top: 10px; }
+
+.newForm input {
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.newForm .form-row.unavailable {
+  opacity: .5;
+  cursor: wait; }

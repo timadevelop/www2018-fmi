@@ -2,10 +2,12 @@
   <h4>Last trips</h4>
   <hr>
   <ul class="items">
-    <?php include('parts/item.php') ?>
-    <?php include('parts/item.php') ?>
-    <?php include('parts/item.php') ?>
-    <?php include('parts/item.php') ?>
+<?php
+  $trips = R::find('trips', '', []);
+?>
+    <?php foreach ($trips as $trip): ?>
+      <?php include('parts/trip.php') ?>
+    <?php endforeach; ?>
     <div class="flex space-around horizontal">
       <a href="">Show more</a>
     </div>

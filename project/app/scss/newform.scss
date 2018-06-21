@@ -1,0 +1,17 @@
+@import './colors.scss';
+.newForm {
+
+  * {
+    margin-top: 10px;
+  }
+
+  input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .form-row.unavailable {
+    opacity: .5;
+    cursor: wait;
+  }
+}

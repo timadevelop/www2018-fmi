@@ -1,0 +1,11 @@
+.newForm * {
+  margin-top: 10px; }
+
+.newForm input {
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.newForm .form-row.unavailable {
+  opacity: .5;
+  cursor: wait; }
