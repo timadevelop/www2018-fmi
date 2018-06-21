@@ -51,11 +51,11 @@ echo "OK, created.";
         <h3>Add new trip</h3>
         <div class="form-row flex space-between">
           <lable class="flex1" for="title">Title</lable>
-          <input class="flex4" type="text" name="title" required minlength="4" placeholder="Trip title" value="<?php echo @$data['title']; ?>">
+          <input class="flex4" type="text" name="title" required minlength="4" maxlength="30" placeholder="Trip title" value="<?php echo @$data['title']; ?>">
           </div>
         <div class="form-row flex space-between">
           <lable class="flex1" for="short_description">Short description</lable>
-          <input class="flex4" type="text" name="short_description" required minlength="4" maxlength="20" placeholder="Short description" value="<?php echo @$data['title']; ?>">
+          <input class="flex4" type="text" name="short_description" required minlength="4" maxlength="50" placeholder="Short description" value="<?php echo @$data['title']; ?>">
         </div>
         <div class="form-row flex space-between">
           <lable class="flex1" for="date">Date</lable>

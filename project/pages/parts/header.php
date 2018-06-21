@@ -11,12 +11,13 @@
   <div class="block">
     <div class="head container flex space-between horizontal">
       <div class="left-section flex space-between horizontal">
-        <a href="../">
+        <a href="index.php">
           <img src="https://cdn.svgporn.com/logos/nomad.svg"></img>
         </a>
         <input type="text" placeholder="Search trips, services & many more..." />
-        <a href="../about.php">About</a>
-        <a href="../contacts.php">Contacts</a>
+        <a href="../trips.php">Trips</a>
+        <a href="../services.php">Services</a>
+        <a href="../users.php">Users</a>
       </div>
       <div class="user-section flex space-between horizontal">
         <?php if ( isset($_SESSION['logged_user']) ) : ?>

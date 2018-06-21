@@ -10,7 +10,10 @@ ul.items {
       cursor: pointer;
       opacity: 1; }
       ul.items li:hover .hided {
-        display: flex; }
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        transition: all .5s linear; }
     ul.items li img {
       max-width: 80px;
       max-height: 80px;
@@ -22,7 +25,8 @@ ul.items {
       width: 20px;
       height: 20px; }
     ul.items li .hided {
-      display: none; }
+      visibility: hidden;
+      opacity: 0; }
   ul.items > div {
     margin-top: 20px; }
     ul.items > div a:hover {

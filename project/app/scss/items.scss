@@ -13,6 +13,9 @@ ul.items {
       opacity: 1;
       .hided {
         display: flex;
+        visibility: visible;
+        opacity: 1;
+        transition: all .5s linear;
       }
     }
     img {
@@ -31,7 +34,9 @@ ul.items {
       }
     }
     .hided {
-      display: none;
+      // display: none;
+      visibility: hidden;
+      opacity: 0;
     }
   }
   > div {
