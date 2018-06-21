@@ -1,0 +1,32 @@
+@import './colors.scss';
+
+ul.items {
+  margin: 0 -20px;
+  li {
+    padding: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $color-border;
+    img {
+      max-width: 80px;
+      max-height: 80px;
+      margin-right: 20px;
+    }
+    span {
+      font-size: .9em;
+    }
+    .actions > .author {
+      img {
+        margin: 5px 5px 5px 0;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    display: flex;
+  }
+  > div {
+    margin-top: 20px;
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}

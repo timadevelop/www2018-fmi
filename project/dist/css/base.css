@@ -707,3 +707,25 @@ div.trip .selected {
 .notification-time {
   margin: auto;
   max-width: 200px; }
+
+ul.items {
+  margin: 0 -20px; }
+  ul.items li {
+    padding: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex; }
+    ul.items li img {
+      max-width: 80px;
+      max-height: 80px;
+      margin-right: 20px; }
+    ul.items li span {
+      font-size: .9em; }
+    ul.items li .actions > .author img {
+      margin: 5px 5px 5px 0;
+      width: 20px;
+      height: 20px; }
+  ul.items > div {
+    margin-top: 20px; }
+    ul.items > div a:hover {
+      text-decoration: underline; }
