@@ -4,7 +4,13 @@ ul.items {
     padding: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #e8e8e8;
-    display: flex; }
+    display: flex;
+    opacity: .9; }
+    ul.items li:hover {
+      cursor: pointer;
+      opacity: 1; }
+      ul.items li:hover .hided {
+        display: flex; }
     ul.items li img {
       max-width: 80px;
       max-height: 80px;
@@ -15,6 +21,8 @@ ul.items {
       margin: 5px 5px 5px 0;
       width: 20px;
       height: 20px; }
+    ul.items li .hided {
+      display: none; }
   ul.items > div {
     margin-top: 20px; }
     ul.items > div a:hover {

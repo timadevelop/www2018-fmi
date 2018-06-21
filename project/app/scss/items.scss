@@ -6,6 +6,15 @@ ul.items {
     padding: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid $color-border;
+    display: flex;
+    opacity: .9;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+      .hided {
+        display: flex;
+      }
+    }
     img {
       max-width: 80px;
       max-height: 80px;
@@ -21,7 +30,9 @@ ul.items {
         height: 20px;
       }
     }
-    display: flex;
+    .hided {
+      display: none;
+    }
   }
   > div {
     margin-top: 20px;

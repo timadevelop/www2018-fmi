@@ -1,3 +1,4 @@
+<?php require("db.php"); ?>
 <html>
 
 <head>
@@ -17,9 +18,28 @@
         <a href="../about.php">About</a>
         <a href="../contacts.php">Contacts</a>
       </div>
-      <div class="flex space-between horizontal">
-        <a class="button" href="login.html">Log in</a>
-        <a class="button special" href="login.html">Register</a>
+      <div class="user-section flex space-between horizontal">
+        <?php if ( isset($_SESSION['logged_user']) ) : ?>
+          <a href="user.php/">Hello,
+            <?php echo $_SESSION['logged_user']->email; ?>
+          </a>
+          <a class="button" href="logout.php">Log out</a>
+        <?php else: ?>
+          <a class="button" href="login.php">Log in</a>
+          <a class="button special" href="login.php">Register</a>
+        <?php endif; ?>
       </div>
     </div>
   </div>
+  <?php if ( isset($_SESSION['messages']) ) : ?>
+
+  <div class="block">
+    <div class="flex space-between horizontal">
+      <?php foreach ($_SESSION['messages'] as $msg): ?>
+      <h1>
+        <?=$msg?> </h1>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <?php $_SESSION['messages'] = array(); ?>
+  <?php endif; ?>

@@ -1,0 +1,30 @@
+/* Form */
+.ui-form {
+  max-width: 340px;
+  margin: 50px auto; }
+
+.ui-form {
+  text-align: center; }
+
+.ui-form > * {
+  margin-top: 10px; }
+
+.ui-form .button {
+  width: 100%;
+  color: #fff;
+  margin: 0;
+  margin-top: 10px; }
+  .ui-form .button:hover {
+    opacity: .8; }
+
+.ui-form button.button {
+  color: #999; }
+
+.ui-form #fb-login {
+  background: #4267B2; }
+
+.ui-form #company-login {
+  background: grey; }
+
+.ui-form #google-login {
+  background: #d63031; }

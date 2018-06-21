@@ -1,0 +1,23 @@
+/* Media Queries */
+
+@media (min-width: 769px) {
+
+  nav {
+    text-align: left;
+  }
+
+  .logo {
+    display: inline-block;
+  }
+
+  ul.blocknav {
+    margin-top: 0.15rem;
+  }
+
+  .blocknav li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+
+}
+
