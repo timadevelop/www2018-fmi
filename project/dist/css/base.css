@@ -110,7 +110,8 @@ li {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300; }
+  font-weight: 300;
+  color: #000; }
 
 h1 {
   font-size: 2em;
@@ -139,11 +140,12 @@ h6 {
 /* Links */
 a {
   text-decoration: none;
-  color: #999; }
+  color: #999;
+  vertical-align: middle; }
 
 a:hover,
 a:focus {
-  color: #000;
+  color: #777;
   cursor: pointer; }
 
 /* Lists */
@@ -205,22 +207,41 @@ pre {
 /* Buttons */
 button, .button, input[class="submit"] {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: #fff;
+  height: 30px;
+  padding: 0 10px;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
+  line-height: 16px;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #00b27f;
+  border-radius: 3px;
+  border: 1px solid #e8e8e8;
   cursor: pointer;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  line-height: 30px;
+  vertical-align: middle;
+  justify-content: center; }
+
+.button:hover {
+  background-color: #f9f9f9;
+  color: #999; }
+
+.button ~ .button {
+  margin-left: 10px; }
+
+.button.special {
+  color: #fff;
+  background: #00b27f;
+  border-color: #00b27f; }
+
+.button.special:hover {
+  opacity: .8; }
 
 /* Form */
 p#warningName,
@@ -237,17 +258,16 @@ input[type=text],
 input[type=email],
 textarea {
   border: 0px;
-  height: 2.0em;
-  margin: 2px 0;
-  padding-left: 0.5em;
-  font-size: 1.0em;
-  box-sizing: border-box; }
+  height: 30px;
+  padding: 0 10px;
+  color: #999;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px; }
 
 input:focus,
 textarea:focus {
-  border: 0px;
-  outline: 0px;
-  border-bottom: 1px solid #999; }
+  outline: 0px; }
 
 input[type=submit]:focus {
   border: none; }
@@ -524,6 +544,19 @@ i[class^="fa"] {
 
 .align-self-center {
   align-self: center; }
+
+.head div {
+  line-height: 30px;
+  vertical-align: middle; }
+
+.head img {
+  height: 30px; }
+
+.head .left-section > * {
+  margin-right: 15px; }
+
+.subscribeNewsletter > :nth-child(1) {
+  margin: 15px 0px; }
 
 div.trip {
   text-align: center;

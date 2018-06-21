@@ -8,8 +8,18 @@
 
 <body>
   <div class="block">
-    <div class="container flex space-between horizontal">
-      <a href="trips.html">Back to Trips</a>
-      <a href="trips.html">Remove this trip</a>
+    <div class="head container flex space-between horizontal">
+      <div class="left-section flex space-between horizontal">
+        <a href="../">
+          <img src="https://cdn.svgporn.com/logos/nomad.svg"></img>
+        </a>
+        <input type="text" placeholder="Search trips, services & many more..." />
+        <a href="../about.php">About</a>
+        <a href="../contacts.php">Contacts</a>
+      </div>
+      <div class="flex space-between horizontal">
+        <a class="button" href="login.html">Log in</a>
+        <a class="button special" href="login.html">Register</a>
+      </div>
     </div>
   </div>
