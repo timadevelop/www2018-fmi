@@ -100,7 +100,7 @@ li {
   padding: 20px;
   background: #fff;
   border-radius: 3px;
-  border-bottom: 1px solid #e8e8e8; }
+  border: 1px solid #e8e8e8; }
 
 .container > .flex ~ .flex {
   margin-left: 30px; }
@@ -434,6 +434,14 @@ i[class^="fa"] {
 .subscribeNewsletter > :nth-child(1) {
   margin: 15px 0px; }
 
+.block.news div a {
+  font-size: .9em;
+  display: block;
+  color: #000; }
+
+.block.news div a ~ a {
+  margin-top: 15px; }
+
 .centerItems {
   align-items: center; }
 
@@ -460,6 +468,8 @@ i[class^="fa"] {
 
 #app {
   padding-top: 20px; }
+  #app > .container > :nth-child(2) {
+    max-width: 300px; }
 
 div.trip {
   text-align: center;

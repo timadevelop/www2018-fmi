@@ -127,9 +127,8 @@ li {
   padding: 20px;
   background: $color-white;
   border-radius: 3px;
-  border-bottom: 1px solid $color-border;
+  border: 1px solid $color-border;
 }
-
 
 .container > .flex ~ .flex {
   margin-left: 30px;
@@ -577,6 +576,19 @@ i[class^="fa"] {
   }
 }
 
+.block.news {
+  div {
+    a {
+      font-size: .9em;
+      display: block;
+      color: $color-black;
+    }
+    a ~ a {
+      margin-top: 15px;
+    }
+  }
+}
+
 
 .centerItems {
   align-items: center;
@@ -610,6 +622,11 @@ i[class^="fa"] {
 }
 #app {
   padding-top: 20px;
+  > .container {
+    > :nth-child(2) {
+      max-width: 300px;
+    }
+  }
 }
 
 @import './trip.scss';
