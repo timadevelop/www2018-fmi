@@ -240,6 +240,12 @@ button, .button, input[class="submit"] {
   background: #00b27f;
   border-color: #00b27f; }
 
+.button.warning {
+  color: #fff;
+  background: #d63031;
+  border-color: #d63031; }
+
+.button.warning:hover,
 .button.special:hover {
   opacity: .8; }
 
@@ -396,13 +402,30 @@ i[class^="fa"] {
   vertical-align: middle; }
 
 .head img {
-  height: 30px; }
+  height: 30px;
+  cursor: pointer; }
+  .head img:hover {
+    opacity: .8; }
 
 .head .left-section > * {
   margin-right: 15px; }
 
 .head .user-section > * {
   margin-left: 15px; }
+
+.head .user-section .user-details {
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  left: -20px; }
+
+.head .user-section #user-details {
+  visibility: hidden; }
+
+.head .user-section .relative {
+  position: relative; }
 
 .subscribeNewsletter > :nth-child(1) {
   margin: 15px 0px; }
@@ -578,10 +601,10 @@ ul.items {
         display: flex;
         visibility: visible;
         opacity: 1;
-        transition: all .5s linear; }
+        transition: all .2s linear; }
     ul.items li img {
-      max-width: 80px;
-      max-height: 80px;
+      width: 80px;
+      height: 80px;
       margin-right: 20px; }
     ul.items li span {
       font-size: .9em; }
@@ -592,6 +615,8 @@ ul.items {
     ul.items li .hided {
       visibility: hidden;
       opacity: 0; }
+    ul.items li a.hided:hover {
+      opacity: .8; }
   ul.items > div {
     margin-top: 20px; }
     ul.items > div a:hover {

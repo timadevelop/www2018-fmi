@@ -13,10 +13,10 @@ ul.items {
         display: flex;
         visibility: visible;
         opacity: 1;
-        transition: all .5s linear; }
+        transition: all .2s linear; }
     ul.items li img {
-      max-width: 80px;
-      max-height: 80px;
+      width: 80px;
+      height: 80px;
       margin-right: 20px; }
     ul.items li span {
       font-size: .9em; }
@@ -27,6 +27,8 @@ ul.items {
     ul.items li .hided {
       visibility: hidden;
       opacity: 0; }
+    ul.items li a.hided:hover {
+      opacity: .8; }
   ul.items > div {
     margin-top: 20px; }
     ul.items > div a:hover {

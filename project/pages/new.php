@@ -16,6 +16,10 @@ $public = isset($_POST['submit_public']) ? true : false;
 $date = trim($_POST['date']);
 $short_description = trim($_POST['short_description']);
 
+if( empty($img_src) )
+{
+  $img_src = 'https://cdn.svgporn.com/logos/gusto.svg';
+}
 if( $title == '' || $date == '' || $short_description == '')
 {
   array_push($_SESSION['messages'], 'Bad format');

@@ -322,6 +322,13 @@ button, .button, input[class="submit"] {
   border-color: $color-green;
 }
 
+.button.warning {
+  color: $color-white;
+  background: $color-red;
+  border-color: $color-red;
+}
+
+.button.warning:hover,
 .button.special:hover{
   opacity: .8;
 }
@@ -525,6 +532,10 @@ i[class^="fa"] {
   }
   img {
     height: 30px;
+    cursor: pointer;
+    &:hover {
+      opacity: .8;
+    }
   }
 
   .left-section {
@@ -535,6 +546,20 @@ i[class^="fa"] {
   .user-section {
     > * {
       margin-left: 15px;
+    }
+    .user-details {
+      border-radius: 5px;
+      border: 1px solid $color-border;
+      position: absolute;
+      top: 10px;
+      width: 120px;
+      left: -20px;
+    }
+    #user-details {
+      visibility: hidden;
+    }
+    .relative {
+      position: relative;
     }
   }
 }

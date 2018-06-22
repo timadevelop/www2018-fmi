@@ -51,9 +51,14 @@ function login() {
         array_push($_SESSION['messages'], 'Login '.$_POST['login'].' is not registered. To register new account you need to specify your email address.');
         redirect('login.php');
       }
+      $img_src= trim($_POST['img_src']);
+      if ( empty($img_src) ) {
+        $img_src = 'https://cdn.svgporn.com/logos/bigpanda.svg';
+      }
       $user = R::dispense('users');
-      $user->login = $_POST['login'];
-      $user->email = $_POST['email'];
+      $user->login = trim($_POST['login']);
+      $user->email = trim($_POST['email']);
+      $user->img_src= $img_src;
       $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
       R::store($user);
       login();

@@ -1,3 +1,3 @@
-  <script src="../dist/js/app.js"></script>
+    </div>
   </body>
 </html>
