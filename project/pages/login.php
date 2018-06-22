@@ -58,7 +58,8 @@ function login() {
       $user = R::dispense('users');
       $user->login = trim($_POST['login']);
       $user->email = trim($_POST['email']);
-      $user->img_src= $img_src;
+      $user->img_src = $img_src;
+      $user->score = 0;
       $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
       R::store($user);
       login();
@@ -71,7 +72,8 @@ function login() {
 <?php include_once("parts/header.php") ?>
 <div class="mt30 block container">
   <?php include "parts/messages.php" ?>
-  <form action="login.php" method="POST" class="ui-form flex space-around vertical">
+  <form action="login.php" method="POST" class="ui-form flex space-around vertical centerItems">
+    <img style="width:120px;height:111px;" src="https://cdn.svgporn.com/logos/nomad.svg" />
     <p>Nomadplan strive to facilitate the planning and management of travel.</p>
     <!-- <p><b>Log in</b> to try features we provide.</p> -->
     <input type="text" name="login" required minlength="4" maxlength="50" placeholder="Your login" value="<?php echo @$user->login; ?>">
@@ -80,7 +82,7 @@ function login() {
     <button class="button" name="login_action" type="submit">Log in</button>
     <a href="me.html" class="button" id="google-login">Login using google</a>
     <a href="me.html" class="button" id="fb-login">Login using Facebook</a>
-    <a href="login_company.html" class="button" id="company-login">I represent a company</a>
+    <a href="login_company.php" class="button" id="company-login">I represent a company</a>
     <span>We'll never spanost to any of your accounts without your spanermission.</span>
   </form>
 </div>

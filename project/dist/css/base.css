@@ -430,6 +430,24 @@ i[class^="fa"] {
 .subscribeNewsletter > :nth-child(1) {
   margin: 15px 0px; }
 
+.centerItems {
+  align-items: center; }
+
+#notifications {
+  position: absolute;
+  width: 200px;
+  right: 20px;
+  top: 100px; }
+  #notifications .block {
+    opacity: .7;
+    background-color: #fdcb6e;
+    padding: 10px;
+    margin: 5px 0;
+    color: white;
+    cursor: pointer; }
+    #notifications .block:hover {
+      opacity: 1; }
+
 .foot a ~ a {
   margin-left: 10px; }
 
@@ -625,7 +643,7 @@ ul.items {
 /* Form */
 .ui-form {
   max-width: 340px;
-  margin: 50px auto; }
+  margin: 20px auto; }
 
 .ui-form {
   text-align: center; }

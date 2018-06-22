@@ -1,9 +1,8 @@
   <?php if ( isset($_SESSION['messages']) && !empty($_SESSION['messages'])) : ?>
-    <div class="block">
-      <div class="flex space-between horizontal">
+   <div id="notifications">
+      <div class="flex vertical">
         <?php foreach ($_SESSION['messages'] as $msg): ?>
-        <h1>
-          <?=$msg?> </h1>
+          <p onclick="hide(event)" class="block"><?=$msg?></p>
         <?php endforeach; ?>
       </div>
     </div>

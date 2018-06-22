@@ -576,6 +576,28 @@ i[class^="fa"] {
 }
 
 
+.centerItems {
+  align-items: center;
+}
+
+#notifications {
+  position: absolute;
+  width: 200px;
+  right: 20px;
+  top: 100px;
+  .block {
+    opacity: .7;
+    background-color: #fdcb6e;
+    padding: 10px;
+    margin: 5px 0;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 .foot {
   a ~ a {
     margin-left: 10px;

@@ -36,7 +36,7 @@
           </div>
           </div>
         </div>
-        <a class="button" href="logout.php">Log out</a>
+        <a class="button" href="https://facebook.com/teemofeev" target="_blank">Author</a>
         <?php else: ?>
         <a class="button" href="login.php">Log in</a>
         <a class="button special" href="login.php">Register</a>

@@ -14,3 +14,6 @@ function toogleVisibility(id)
 }
 
 window.toogleVisibility = toogleVisibility;
+window.hide = function(e) {
+  e.target.style.display = 'none';
+}

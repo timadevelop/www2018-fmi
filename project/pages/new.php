@@ -32,6 +32,7 @@ $trip->title = $title;
 $trip->img_src = $img_src;
 $trip->is_public = $public;
 $trip->date = $date;
+$trip->score = 0;
 $trip->short_description = $short_description;
 $trip->author_id = $_SESSION['logged_user']->id;
 $trip->created_at = date('l jS \of F Y h:i:s A');

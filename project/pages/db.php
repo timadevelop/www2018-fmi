@@ -1,6 +1,6 @@
 <?php
 require_once 'functions.php';
-require_once "../libs/rb-mysql.php";
+require_once __DIR__."/../libs/rb-mysql.php";
 if (session_status() == PHP_SESSION_NONE) {
 R::setup('mysql:host=localhost;
       dbname=nomadplan','root','');
