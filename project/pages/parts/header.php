@@ -17,13 +17,18 @@
           <img src="https://cdn.svgporn.com/logos/nomad.svg"></img>
         </a>
         <input type="text" placeholder="Search trips, services & many more..." />
-        <a href="../trips.php">Trips</a>
-        <a href="../services.php">Services</a>
-        <a href="../users.php">Users</a>
+        <a href="trips.php">Trips</a>
+        <a href="services.php">Services</a>
+        <a href="users.php">Users</a>
+        <a href="companies.php">Companies</a>
       </div>
       <div class="user-section flex space-between horizontal">
         <?php if ( isset($_SESSION['logged_user']) ) : ?>
-        <a class="button" href="new.php">+</a>
+          <?php if ( isset($_SESSION['logged_user']->services) ) : ?>
+            <a class="button" href="newservice.php">+</a>
+          <?php else: ?>
+            <a class="button" href="new.php">+</a>
+          <?php endif; ?>
         <div class="user-info">
           <img onClick="toogleVisibility('user-details')" src="<?=$_SESSION['logged_user']->img_src?>" />
           <div id='user-details' class="relative">

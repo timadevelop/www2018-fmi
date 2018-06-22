@@ -7,7 +7,7 @@
 
 <div class="container flex space-between horizontal">
   <div class="flex flex-start vertical flex3">
-    <?php include_once("parts/blocks/users.php") ?>
+    <?php include_once("parts/blocks/companies.php") ?>
   </div>
   <div class="flex flex-start vertical flex2">
     <?php include_once("parts/blocks/news.php") ?>

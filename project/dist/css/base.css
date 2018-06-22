@@ -427,6 +427,10 @@ i[class^="fa"] {
 .head .user-section .relative {
   position: relative; }
 
+.newUserPropose {
+  margin-bottom: 20px;
+  margin-top: -20px; }
+
 .subscribeNewsletter > :nth-child(1) {
   margin: 15px 0px; }
 
@@ -453,6 +457,9 @@ i[class^="fa"] {
 
 .foot a:hover {
   text-decoration: underline; }
+
+#app {
+  padding-top: 20px; }
 
 div.trip {
   text-align: center;

@@ -4,6 +4,10 @@ if ( session_status() == PHP_SESSION_NONE ||  !isset($_SESSION['logged_user']) )
   array_push($_SESSION['messages'], 'To create your next plan, login please.');
   redirect('login.php');
 }
+if ( isset($_SESSION['logged_user']->services)) {
+  array_push($_SESSION['messages'], 'As company you cannot create trips, try add some service');
+  redirect('newservice.php');
+}
 ?>
 
 <?php if( isset($_POST['submit_public']) || isset($_POST['submit_private']) ) : ?>
@@ -38,8 +42,7 @@ $trip->author_id = $_SESSION['logged_user']->id;
 $trip->created_at = date('l jS \of F Y h:i:s A');
 
 R::store($trip);
-echo "OK, created.";
-
+redirect('index.php');
 ?>
 
     <?php else: ?>

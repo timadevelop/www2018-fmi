@@ -2,7 +2,9 @@
   $user = R::findOne('users', 'id = ?', array($trip->author_id));
   if( ! $user )
   {
-    echo 'some err';
+    // $user = array(
+    //   'id' => '-1',
+    // );
   }
 ?>
 <li class="flex horizontal flex1">
@@ -17,8 +19,10 @@
     </a>
     <span><?=$trip->short_description?></span>
     <div class="actions flex space-between horizontal">
-      <a href="" class="author flex horizontal">
-        <span>by <?=$user->login?></span>
+      <div class="author flex horizontal">
+        <a href="user.php/<?=$user->id?>">
+          <img  alt="<?=$user->login?>" src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+        </a>
         <?php if($trip->is_public) : ?>
         <img src="https://cdn.svgporn.com/logos/unito.svg" />
         <?php else: ?>
@@ -26,10 +30,11 @@
         <?php endif; ?>
         <img class="hided" src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'https://cdn.svgporn.com/logos/gatsby.svg')?>" />
         <img class="hided" src="https://cdn.svgporn.com/logos/prettier.svg" />
-      </a>
+      </div>
       <div class="flex flex-end horizontal">
-        <?php if( isset($_SESSION['logged_user']) && $_SESSION['logged_user']->id == $trip->author_id) : ?>
-          <a class="button hided warning" href="remove.php/<?=$trip->id?>">remove</a>
+        <?php if( isset($_SESSION['logged_user']) &&
+          ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id)) : ?>
+          <a class="button hided warning" href="action/delete/trip.php/<?=$trip->id?>">remove</a>
         <?php endif; ?>
         <a class="button hided" href="share.php/<?=$trip->id?>">share</a>
         <a class="button" href="trip.php/<?=$trip->id?>">more</a>

@@ -565,6 +565,8 @@ i[class^="fa"] {
 }
 
 .newUserPropose {
+  margin-bottom: 20px;
+  margin-top: -20px;
   &>:nth-child(1) {
   }
 }
@@ -606,7 +608,9 @@ i[class^="fa"] {
     text-decoration: underline;
   }
 }
-
+#app {
+  padding-top: 20px;
+}
 
 @import './trip.scss';
 @import './items.scss';
