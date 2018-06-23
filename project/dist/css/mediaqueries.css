@@ -9,3 +9,46 @@
   .blocknav li {
     display: inline-block;
     margin-right: 1em; } }
+
+@media (max-width: 790px) {
+  #notifications > div > .block {
+    opacity: .9; }
+  #app > .container {
+    display: block;
+    flex-direction: column; }
+    #app > .container > :nth-child(2) {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+  .hided {
+    visibility: visible !important;
+    opacity: 1 !important; }
+  .head .left-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; }
+    .head .left-section .links {
+      margin: 10px auto; }
+  .head .flex.user-section {
+    margin: 5px;
+    margin-left: 0;
+    justify-content: center;
+    width: 100%; }
+  .items li .actions {
+    flex-direction: column; }
+    .items li .actions a.button {
+      width: 100px;
+      margin: 5px 0; }
+    .items li .actions > :nth-child(2) {
+      flex-direction: row-reverse; }
+  .newUserPropose > div {
+    flex-direction: column-reverse;
+    display: block; }
+    .newUserPropose > div > :nth-child(1) > div {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .newUserPropose > div > :nth-child(2), .newUserPropose > div > :nth-child(3) {
+      display: none; } }

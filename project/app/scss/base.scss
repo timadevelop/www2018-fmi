@@ -6,6 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  vertical-align: middle;
 }
 
 html {
@@ -30,6 +31,8 @@ li {
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
+  flex-flow: wrap;
 }
 
 .flex1 {
@@ -51,6 +54,9 @@ li {
 }
 .space-around {
   justify-content: space-around;
+}
+.center-content {
+  justify-content: center;
 }
 
 .flex-start {
@@ -527,6 +533,9 @@ i[class^="fa"] {
 .head {
   div{
     line-height: 30px;
+    * {
+      vertical-align: middle;
+  }
     vertical-align: middle;
   }
   img {
@@ -538,7 +547,7 @@ i[class^="fa"] {
   }
 
   .left-section {
-    > * {
+    div > * {
       margin-right: 15px;
     }
   }
@@ -552,7 +561,7 @@ i[class^="fa"] {
       position: absolute;
       top: 10px;
       width: 120px;
-      left: -20px;
+      left: -30px;
     }
     #user-details {
       visibility: hidden;
@@ -601,7 +610,7 @@ i[class^="fa"] {
   top: 100px;
   .block {
     opacity: .7;
-    background-color: #fdcb6e;
+    background-color: #F5AB35;
     padding: 10px;
     margin: 5px 0;
     color: white;
@@ -613,8 +622,10 @@ i[class^="fa"] {
 }
 
 .foot {
-  a ~ a {
-    margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  a {
+    margin-right: 10px;
   }
   a:hover {
     text-decoration: underline;
@@ -626,6 +637,19 @@ i[class^="fa"] {
     > :nth-child(2) {
       max-width: 300px;
     }
+  }
+}
+
+.user{
+  > *, img {
+    width: 100%;
+    text-align: center;
+  }
+  * {
+    margin: 10px auto;
+  }
+  img {
+    height: 100px;
   }
 }
 

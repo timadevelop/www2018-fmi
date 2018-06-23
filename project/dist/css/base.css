@@ -2,7 +2,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  vertical-align: middle; }
 
 html {
   overflow-y: scroll; }
@@ -20,7 +21,9 @@ li {
   flex-direction: column; }
 
 .flex {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: wrap; }
 
 .flex1 {
   flex: 1; }
@@ -39,6 +42,9 @@ li {
 
 .space-around {
   justify-content: space-around; }
+
+.center-content {
+  justify-content: center; }
 
 .flex-start {
   justify-content: flex-start; }
@@ -400,6 +406,8 @@ i[class^="fa"] {
 .head div {
   line-height: 30px;
   vertical-align: middle; }
+  .head div * {
+    vertical-align: middle; }
 
 .head img {
   height: 30px;
@@ -407,7 +415,7 @@ i[class^="fa"] {
   .head img:hover {
     opacity: .8; }
 
-.head .left-section > * {
+.head .left-section div > * {
   margin-right: 15px; }
 
 .head .user-section > * {
@@ -419,7 +427,7 @@ i[class^="fa"] {
   position: absolute;
   top: 10px;
   width: 120px;
-  left: -20px; }
+  left: -30px; }
 
 .head .user-section #user-details {
   visibility: hidden; }
@@ -452,7 +460,7 @@ i[class^="fa"] {
   top: 100px; }
   #notifications .block {
     opacity: .7;
-    background-color: #fdcb6e;
+    background-color: #F5AB35;
     padding: 10px;
     margin: 5px 0;
     color: white;
@@ -460,16 +468,28 @@ i[class^="fa"] {
     #notifications .block:hover {
       opacity: 1; }
 
-.foot a ~ a {
-  margin-left: 10px; }
-
-.foot a:hover {
-  text-decoration: underline; }
+.foot {
+  display: flex;
+  flex-wrap: wrap; }
+  .foot a {
+    margin-right: 10px; }
+  .foot a:hover {
+    text-decoration: underline; }
 
 #app {
   padding-top: 20px; }
   #app > .container > :nth-child(2) {
     max-width: 300px; }
+
+.user > *, .user img {
+  width: 100%;
+  text-align: center; }
+
+.user * {
+  margin: 10px auto; }
+
+.user img {
+  height: 100px; }
 
 div.trip {
   text-align: center;
@@ -699,6 +719,49 @@ ul.items {
   .blocknav li {
     display: inline-block;
     margin-right: 1em; } }
+
+@media (max-width: 790px) {
+  #notifications > div > .block {
+    opacity: .9; }
+  #app > .container {
+    display: block;
+    flex-direction: column; }
+    #app > .container > :nth-child(2) {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0; }
+  .hided {
+    visibility: visible !important;
+    opacity: 1 !important; }
+  .head .left-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; }
+    .head .left-section .links {
+      margin: 10px auto; }
+  .head .flex.user-section {
+    margin: 5px;
+    margin-left: 0;
+    justify-content: center;
+    width: 100%; }
+  .items li .actions {
+    flex-direction: column; }
+    .items li .actions a.button {
+      width: 100px;
+      margin: 5px 0; }
+    .items li .actions > :nth-child(2) {
+      flex-direction: row-reverse; }
+  .newUserPropose > div {
+    flex-direction: column-reverse;
+    display: block; }
+    .newUserPropose > div > :nth-child(1) > div {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .newUserPropose > div > :nth-child(2), .newUserPropose > div > :nth-child(3) {
+      display: none; } }
 
 .newForm * {
   margin-top: 10px; }

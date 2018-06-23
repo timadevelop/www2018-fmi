@@ -21,3 +21,73 @@
 
 }
 
+@media (max-width: 790px) {
+  #notifications > div > .block {
+    opacity: .9;
+  }
+  #app {
+    > .container {
+      display: block;
+      flex-direction: column;
+      >:nth-child(2) {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  .hided {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .head {
+    // justify-content: center;
+    .left-section {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      .links {
+        margin: 10px auto;
+      }
+    }
+    .flex.user-section {
+      margin: 5px;
+      margin-left: 0;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  .items {
+    li{
+      .actions {
+        flex-direction: column;
+        a.button {
+          width: 100px;
+          margin: 5px 0;
+        }
+        >:nth-child(2) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  .newUserPropose {
+    > div {
+      flex-direction: column-reverse;
+      display: block;
+      >:nth-child(1) {
+        > div {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      >:nth-child(2), >:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
