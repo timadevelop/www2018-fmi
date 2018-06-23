@@ -481,14 +481,14 @@ i[class^="fa"] {
   #app > .container > :nth-child(2) {
     max-width: 300px; }
 
-.user > *, .user img {
+.user > *, .user img, .company > *, .company img {
   width: 100%;
   text-align: center; }
 
-.user * {
+.user *, .company * {
   margin: 10px auto; }
 
-.user img {
+.user img, .company img {
   height: 100px; }
 
 div.trip {
