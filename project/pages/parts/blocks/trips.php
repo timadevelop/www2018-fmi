@@ -6,7 +6,7 @@
   $trips = R::find('trips', '', []);
 ?>
     <?php foreach ($trips as $trip): ?>
-      <?php include('parts/trip.php') ?>
+      <?php include($_SERVER["DOCUMENT_ROOT"].'/parts/trip.php') ?>
     <?php endforeach; ?>
     <div class="flex space-around horizontal">
       <a href="">Show more</a>

@@ -55,5 +55,5 @@
       </div>
     </div>
   </div>
-  <?php include "parts/messages.php" ?>
+  <?php include $_SERVER["DOCUMENT_ROOT"]."/parts/messages.php" ?>
   <div id="app">

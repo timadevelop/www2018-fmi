@@ -6,7 +6,7 @@
   $services = R::find('services', '', []);
 ?>
     <?php foreach ($services as $service): ?>
-      <?php include('parts/service.php') ?>
+      <?php include($_SERVER["DOCUMENT_ROOT"].'/parts/service.php') ?>
     <?php endforeach; ?>
     <div class="flex space-around horizontal">
       <a href="">Show more</a>

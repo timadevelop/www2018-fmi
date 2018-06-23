@@ -6,7 +6,7 @@
   $companies = R::find('companies', '', []);
 ?>
     <?php foreach ($companies as $company): ?>
-      <?php include('parts/company.php') ?>
+      <?php include($_SERVER["DOCUMENT_ROOT"].'/parts/company.php') ?>
     <?php endforeach; ?>
     <div class="flex space-around horizontal">
       <a href="">Show more</a>

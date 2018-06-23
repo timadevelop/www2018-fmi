@@ -6,7 +6,7 @@
   $users = R::find('users', '', []);
 ?>
     <?php foreach ($users as $user): ?>
-      <?php include('parts/user.php') ?>
+      <?php include($_SERVER["DOCUMENT_ROOT"].'/parts/user.php') ?>
     <?php endforeach; ?>
     <div class="flex space-around horizontal">
       <a href="">Show more</a>

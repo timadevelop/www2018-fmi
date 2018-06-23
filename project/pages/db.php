@@ -7,6 +7,7 @@ R::setup('mysql:host=localhost;
     session_start();
 }
 
+$_SERVER["DOCUMENT_ROOT"] = '/opt/lampp/htdocs/projects/web2018-fmi/project/pages';
 
 if( ! isset( $_SESSION['messages'] ) )
 {
