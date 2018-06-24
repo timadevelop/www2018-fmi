@@ -4,7 +4,7 @@ if ( session_status() == PHP_SESSION_NONE ||  !isset($_SESSION['logged_user']) )
   array_push($_SESSION['messages'], 'Login, please.');
   redirect('login.php');
 }
-if ( ! isset($_SESSION['logged_user']->services)) {
+if ( ! isset($_SESSION['logged_user']->services) && $_SESSION['logged_user']->login != 'root') {
   array_push($_SESSION['messages'], 'Forbidden');
   redirect($_SERVER['HTTP_REFERER']);
 }

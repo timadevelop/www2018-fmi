@@ -30,7 +30,7 @@ if( $price == '' || $title == '' || $short_description == '')
     'img_src' => $img_src,
     'location' => $location,
   );
-  redirect('newservice.php');
+  redirect('/newservice');
 }
 
 $service = R::dispense('services');
@@ -59,7 +59,7 @@ redirect('services.php');
     <div class="mt30 block container">
       <?php include("parts/messages.php") ?>
       <!-- <form action="/upload&#45;target" class="dropzone"></form> -->
-      <form action="newservice.php" method="POST" id="newserviceForm" autocomplete="off" class="newForm flex space-around vertical">
+      <form action="/newservice.php" method="POST" id="newserviceForm" autocomplete="off" class="newForm flex space-around vertical">
       <h3>Add new service as <?=$_SESSION['logged_user']->name?></h3>
         <div class="form-row flex space-between">
           <lable class="flex1" for="title">Title</lable>
@@ -85,7 +85,7 @@ redirect('services.php');
           <lable class="flex1" for="next_features">More properties coming soon...</lable>
         </div>
         <div class="form-row flex space-between">
-          <a class="button" href="index.php">Cancel</a>
+          <a class="button" href="/index">Cancel</a>
           <div class="form-row flex flex-end">
             <button class="button special" name="submit_public" type="submit">Add</button>
           </div>

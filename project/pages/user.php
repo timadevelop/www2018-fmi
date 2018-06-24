@@ -36,10 +36,10 @@ if ( ! $user ) {
           <div class="flex center-content horizontal">
             <?php if( isset($_SESSION['logged_user']) &&
                   ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $user->id)) : ?>
-            <a class="button hided warning" href="action/delete/user.php/<?=$user->id?>">remove</a>
+            <a class="button hided warning" href="/action/delete/user/<?=$user->id?>">remove</a>
             <?php endif; ?>
-            <a class="button hided" href="share.php/user/<?=$user->id?>">share</a>
-            <a class="button" href="user.php/<?=$user->id?>">more</a>
+            <a class="button hided" href="/share/user/<?=$user->id?>">share</a>
+            <a class="button" href="/user/<?=$user->id?>">more</a>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@ if ( ! $user ) {
             <?php include('parts/trip.php') ?>
           <?php endforeach; ?>
           <div class="flex space-around horizontal">
-            <a href="">Show more</a>
+            <a href="/">Show more</a>
           </div>
         </ul>
       </div>

@@ -27,7 +27,7 @@ if( empty($img_src) )
 if( $title == '' || $date == '' || $short_description == '')
 {
   array_push($_SESSION['messages'], 'Bad format');
-  redirect('new.php');
+  redirect('/new');
 }
 
 $trip = R::dispense('trips');
@@ -55,7 +55,7 @@ redirect('index.php');
     <div class="mt30 block container">
       <?php include("parts/messages.php") ?>
       <!-- <form action="/upload&#45;target" class="dropzone"></form> -->
-      <form action="new.php" method="POST" id="newTripForm" autocomplete="off" class="newForm flex space-around vertical">
+      <form action="/new.php" method="POST" id="newTripForm" autocomplete="off" class="newForm flex space-around vertical">
         <h3>Add new trip</h3>
         <div class="form-row flex space-between">
           <lable class="flex1" for="title">Title</lable>
@@ -77,7 +77,7 @@ redirect('index.php');
           <lable class="flex1" for="next_features">More properties coming soon...</lable>
         </div>
         <div class="form-row flex space-between">
-          <a class="button" href="index.php">Cancel</a>
+          <a class="button" href="/index">Cancel</a>
           <div class="form-row flex flex-end">
             <button class="button special" name="submit_private" type="submit">Create private</button>
             <button class="button" name="submit_public" type="submit">Create public</button>

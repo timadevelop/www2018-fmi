@@ -8,11 +8,11 @@
   }
 ?>
 <li class="flex horizontal flex1">
-  <a href="trip.php/<?=$trip->id?>">
+  <a href="/trip/<?=$trip->id?>">
     <img src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
   </a>
   <div class="flex space-between vertical flex3">
-    <a href="trip.php/<?=$trip->id?>">
+    <a href="/trip/<?=$trip->id?>">
       <h4>
         <?=$trip->title?>
       </h4>
@@ -20,7 +20,7 @@
     <span><?=$trip->short_description?></span>
     <div class="actions flex space-between horizontal">
       <div class="author flex horizontal">
-        <a href="user.php/<?=$user->id?>">
+        <a href="/user/<?=$user->id?>">
           <img  alt="<?=$user->login?>" src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
         </a>
         <?php if($trip->is_public) : ?>
@@ -34,11 +34,11 @@
       <div class="flex flex-end horizontal">
         <?php if( isset($_SESSION['logged_user']) &&
           ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id)) : ?>
-          <a class="button hided warning" href="action/delete/trip.php/<?=$trip->id?>">remove</a>
+          <a class="button hided warning" href="/action/delete/trip.php/<?=$trip->id?>">remove</a>
         <?php endif; ?>
-        <a class="button hided" href="share.php/<?=$trip->id?>">share</a>
-        <a class="button" href="trip.php/<?=$trip->id?>">more</a>
-        <a class="button" href="copy.php/<?=$trip->id?>">copy</a>
+        <a class="button hided" href="/share/<?=$trip->id?>">share</a>
+        <a class="button" href="/trip.php/<?=$trip->id?>">more</a>
+        <a class="button" href="/copy/<?=$trip->id?>">copy</a>
       </div>
     </div>
   </div>

@@ -80,9 +80,9 @@ function login() {
     <input type="password" name="password" minlength="4" id="password" required placeholder="Your password" autocomplete="off">
     <input type="email" name="email" placeholder="Your email except you are loginning in" value="<?php echo @$user->email; ?>">
     <button class="button" name="login_action" type="submit">Log in</button>
-    <a href="me.html" class="button" id="google-login">Login using google</a>
-    <a href="me.html" class="button" id="fb-login">Login using Facebook</a>
-    <a href="login_company.php" class="button" id="company-login">I represent a company</a>
+    <a href="/me.html" class="button" id="google-login">Login using google</a>
+    <a href="/me.html" class="button" id="fb-login">Login using Facebook</a>
+    <a href="/login_company" class="button" id="company-login">I represent a company</a>
     <span>We'll never spanost to any of your accounts without your spanermission.</span>
   </form>
 </div>

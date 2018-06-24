@@ -1,7 +1,7 @@
 <div class="foot flex block">
-  <a href="about.php">About</a>
-  <a href="contacts.php">Contacts</a>
-  <a href="blog.php">Blog</a>
-  <a href="newsletter.php">Newsletter</a>
-  <a href="trips.php">Trips</a>
+  <a href="/about">About</a>
+  <a href="/contacts">Contacts</a>
+  <a href="/blog">Blog</a>
+  <a href="/newsletter">Newsletter</a>
+  <a href="/trips">Trips</a>
 </div>
