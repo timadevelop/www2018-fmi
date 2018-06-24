@@ -74,7 +74,7 @@ function login() {
 <?php include_once("parts/header.php") ?>
 <div class="mt30 block container">
   <?php include "parts/messages.php" ?>
-  <form action="login_company.php" method="POST" class="ui-form flex space-around vertical centerItems">
+  <form action="/login_company.php" method="POST" class="ui-form flex space-around vertical centerItems">
     <img style="width:120px;height:111px;" src="https://cdn.svgporn.com/logos/nomad.svg" />
     <p>Nomadplan strive to facilitate the planning and management of travel. And you can help us providing your services and gaining new clients.</p>
     <input type="text" name="login" required minlength="4" maxlength="50" placeholder="Company login" value="<?php echo @$company->login; ?>">

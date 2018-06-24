@@ -72,13 +72,13 @@ function login() {
 <?php include_once("parts/header.php") ?>
 <div class="mt30 block container">
   <?php include "parts/messages.php" ?>
-  <form action="login.php" method="POST" class="ui-form flex space-around vertical centerItems">
+  <form action="/login.php" method="POST" class="ui-form flex space-around vertical centerItems">
     <img style="width:120px;height:111px;" src="https://cdn.svgporn.com/logos/nomad.svg" />
     <p>Nomadplan strive to facilitate the planning and management of travel.</p>
     <!-- <p><b>Log in</b> to try features we provide.</p> -->
-    <input type="text" name="login" required minlength="4" maxlength="50" placeholder="Your login" value="<?php echo @$user->login; ?>">
-    <input type="password" name="password" minlength="4" id="password" required placeholder="Your password" autocomplete="off">
-    <input type="email" name="email" placeholder="Your email except you are loginning in" value="<?php echo @$user->email; ?>">
+    <input id="loginInput" onchange="onLoginInputChange(event)" type="text" name="login" required minlength="4" maxlength="50" placeholder="Your login" value="<?php echo @$user->login; ?>">
+    <input id="passwordInput" type="password" name="password" minlength="4" id="password" required placeholder="Your password" autocomplete="off">
+    <input id="emailInput" type="email" name="email" placeholder="Your email except you are loginning in" value="<?php echo @$user->email; ?>">
     <button class="button" name="login_action" type="submit">Log in</button>
     <a href="/me.html" class="button" id="google-login">Login using google</a>
     <a href="/me.html" class="button" id="fb-login">Login using Facebook</a>
@@ -86,5 +86,6 @@ function login() {
     <span>We'll never spanost to any of your accounts without your spanermission.</span>
   </form>
 </div>
+  <script src="../dist/js/login.js"></script>
 <?php include_once("parts/footer.php") ?>
 <?php endif; ?>
