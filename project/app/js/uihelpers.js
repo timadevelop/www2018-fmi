@@ -11,6 +11,15 @@ function toogleVisibility(id)
     el.style.visibility = 'hidden';
     appDiv.style.filter = '';
   }
+  // window.addEventListener('click', (e) => {
+  // if (document.getElementById(id).contains(e.target)){
+  //   // Clicked in box
+  // } else{
+  //   // Clicked outside the box
+  //   el.style.visibility = 'hidden';
+  //   appDiv.style.filter = '';
+  // }
+  // });
 }
 
 window.toogleVisibility = toogleVisibility;

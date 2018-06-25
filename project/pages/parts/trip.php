@@ -7,12 +7,12 @@
     // );
   }
 ?>
-<li class="flex horizontal flex1">
-  <a href="/trip/<?=$trip->id?>">
+<li class="flex horizontal flex0">
+  <a href="/trip.php/<?=$trip->id?>">
     <img src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
   </a>
   <div class="flex space-between vertical flex3">
-    <a href="/trip/<?=$trip->id?>">
+    <a href="/trip.php/<?=$trip->id?>">
       <h4>
         <?=$trip->title?>
       </h4>
