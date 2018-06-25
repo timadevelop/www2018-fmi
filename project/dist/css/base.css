@@ -498,31 +498,32 @@ i[class^="fa"] {
   height: 100px; }
 
 div.trip {
-  text-align: center;
-  border-radius: 3px;
-  background: #F9F9F9;
-  height: 100%;
-  width: 100%;
-  padding: 50px 50px; }
-
-div.trip .btn {
-  width: 100px; }
-
-div.trip hr {
-  margin: 20px 0; }
-
-div.trip .selected {
-  color: #999;
-  cursor: pointer; }
-
-.trip-navigation .hidden {
-  display: none; }
-
-.trip-navigation .fa {
-  padding: 0; }
-
-.trip-integrations .fa {
-  width: 50px; }
+  text-align: center; }
+  div.trip img {
+    max-height: 300px; }
+  div.trip .author {
+    margin-left: 15px; }
+    div.trip .author > .flex {
+      margin: 0 10px;
+      justify-content: center; }
+      div.trip .author > .flex img {
+        max-height: 20px; }
+  div.trip textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 100px;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none; }
+  div.trip .tripNavigation {
+    margin-top: 30px; }
+    div.trip .tripNavigation .selected {
+      color: #777; }
+  div.trip #fragments .hidden {
+    display: none; }
+  div.trip .fa {
+    padding: 0; }
 
 #fragments div ul li {
   padding: 10px 10px;
@@ -590,7 +591,7 @@ div.trip .selected {
 
 #cost_final {
   text-align: right;
-  background: #9E9E9E;
+  background: #999;
   color: white; }
 
 .trip_cost_item .fa {
