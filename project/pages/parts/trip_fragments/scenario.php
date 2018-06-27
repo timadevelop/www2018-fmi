@@ -5,5 +5,8 @@
 </iframe>
   <p>Here is a trip scenario, you can change it!</p>
   <ul id="scenario-list">
+    <?php foreach (json_decode($trip->scenario) as $item): ?>
+      <li><?=$item?></li>
+    <?php endforeach; ?>
   </ul>
 </div>

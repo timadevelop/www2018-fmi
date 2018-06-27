@@ -2,9 +2,20 @@
 <div class="hidden" id="modify-trip-tasks">
   <p>TODO list for your trip.</p>
   <p>set priority, deadline and notifications for these TODOs</p>
-  <ul class="trip-checklist" id="trip_tasks_list">
+  <div class="flex center-content horizontal">
+    <input onkeypress="if (event.keyCode == 13) add(event,  'trip_tasks_list', 'newTaskInput')" id="newTaskInput" class="flex4" type="text" />
+    <button onclick="add(event, 'trip_tasks_list', 'newTaskInput')" class="button flex1">Add</button>
+  </div>
+  <ul class="trip-tasks" id="trip_tasks_list">
+    <?php foreach (json_decode($trip->tasks) as $item): ?>
+      <li onclick="toogleDone(event)">
+        <p><?=$item?></p>
+        <i onclick="remove(<?=$item?>, event)" class="fa fa-trash"></i>
+      </li>
+    <?php endforeach; ?>
   </ul>
 
+  <script src="../dist/js/itemsList.js"></script>
   <!-- The Modal -->
   <div id="myModal" class="modal">
 

@@ -2,8 +2,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  vertical-align: middle; }
+  padding: 0; }
 
 html {
   overflow-y: scroll; }
@@ -499,7 +498,8 @@ i[class^="fa"] {
 
 div.trip {
   text-align: center; }
-  div.trip img {
+  div.trip > img {
+    margin: 20px auto;
     max-height: 300px; }
   div.trip .author {
     margin-left: 15px; }
@@ -538,6 +538,9 @@ div.trip {
 #fragments div ul li i:hover {
   cursor: pointer; }
 
+#modify-trip-travelers .items {
+  text-align: left; }
+
 #modify-trip-transport select {
   -webkit-appearance: button;
   -webkit-border-radius: 2px;
@@ -557,6 +560,23 @@ div.trip {
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 300px; }
+
+#modify-trip-checklist > .flex,
+#modify-trip-tasks > .flex {
+  width: 100%;
+  margin-top: 20px; }
+
+#modify-trip-checklist ul > li,
+#modify-trip-tasks ul > li {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row; }
+
+#modify-trip-checklist .done,
+#modify-trip-tasks .done {
+  opacity: .4;
+  background: #f9f9f9; }
 
 #trip_services_list .trip_service_item,
 #trip_travelers_list .trip_traveler_item,

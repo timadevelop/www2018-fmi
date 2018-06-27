@@ -37,6 +37,14 @@ $trip->img_src = $img_src;
 $trip->is_public = $public;
 $trip->date = $date;
 $trip->score = 0;
+
+$trip->scenario = json_encode(["Sofia", "London"]);
+$trip->transport = "own";
+$trip->checklist = json_encode(["Checklist item"]);
+$trip->tasks = json_encode(["Temporary task"]);
+$trip->travelers = json_encode([$_SESSION['logged_user']->id]);
+$trip->services = json_encode(array());
+
 $trip->short_description = $short_description;
 $trip->description = $short_description . ' Change this description.';
 $trip->author_id = $_SESSION['logged_user']->id;

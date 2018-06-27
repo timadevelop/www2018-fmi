@@ -4,7 +4,7 @@
       <h3>Manage your next travel in one place.</h3>
       <p>Nomadplan strive to facilitate the planning and management of travel. It's a place for planning, sharing and managing your next trip.</p>
       <div>
-        <a class="button special" href="/register">Try it out</a>
+        <a class="button special" href="/login">Try it out</a>
         <a class="button" href="/about">Read more</a>
       </div>
     </div>
