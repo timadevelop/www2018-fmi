@@ -1,19 +1,5 @@
-// Ajax stuff
-function ajax(url, settings) {
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    if (xhr.status == 200) {
-      settings.success(xhr.responseText);
-    } else {
-      console.error(xhr.responseText);
-    }
-  };
-  xhr.open(settings.method || 'GET', url, /* async */ true);
-  xhr.send(settings.data || null);
-}
-//
-// ajax callback
-//
+import { ajax, createElementFromHTML } from './functions';
+
 const loginInput = document.getElementById('loginInput');
 const pwdInput = document.getElementById('passwordInput');
 const emailInput = document.getElementById('emailInput');
