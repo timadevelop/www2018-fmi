@@ -36,7 +36,7 @@ $trip->title = $title;
 $trip->img_src = $img_src;
 $trip->is_public = $public;
 $trip->date = $date;
-$trip->score = 0;
+$trip->upvotes = json_encode([$_SESSION['logged_user']->id]);
 
 $trip->scenario = json_encode(["Sofia", "London"]);
 $trip->transport = "own";

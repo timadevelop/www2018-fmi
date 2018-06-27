@@ -32,13 +32,22 @@
         <img class="hided" src="https://cdn.svgporn.com/logos/prettier.svg" />
       </div>
       <div class="flex flex-end horizontal">
-        <?php if( isset($_SESSION['logged_user']) &&
-          ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id)) : ?>
-          <a class="button hided warning" href="/action/delete/trip.php/<?=$trip->id?>">remove</a>
+       <?php if( isset($_SESSION['logged_user'])): ?>
+          <a class="button hided" href="/copy/<?=$trip->id?>">copy</a>
+          <?php if( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id) : ?>
+            <a class="button hided warning" href="/action/delete/trip.php/<?=$trip->id?>">remove</a>
+          <?php endif; ?>
+          <?php if(! in_array($_SESSION['logged_user']->id, json_decode($trip->upvotes ))) : ?>
+            <a class="button special" onclick="upvote(event, 'trips', <?=$trip->id?>)"><?=count(json_decode($trip->upvotes))?> | upvote</a>
+            <script src="../dist/js/upvote.js"></script>
+          <?php else: ?>
+            <a class="button"><?=count(json_decode($trip->upvotes))?> | upvoted</a>
+          <?php endif; ?>
+        <?php else: ?>
+            <a href="/login" class="button"><?=count(json_decode($trip->upvotes))?> | upvotes</a>
         <?php endif; ?>
-        <a class="button hided" href="/share/<?=$trip->id?>">share</a>
+        <a class="button" href="/share/<?=$trip->id?>">share</a>
         <a class="button" href="/trip.php/<?=$trip->id?>">more</a>
-        <a class="button" href="/copy/<?=$trip->id?>">copy</a>
       </div>
     </div>
   </div>

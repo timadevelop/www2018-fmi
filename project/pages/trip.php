@@ -25,11 +25,17 @@ $user = R::findOne('users', 'id = ?', array($trip->author_id));
         </h4>
         <hr>
           <div class="flex flex-end horizontal">
-            <?php if( isset($_SESSION['logged_user']) &&
-                  ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id)) : ?>
-            <a class="button hided warning" href="/action/delete/trip.php/<?=$trip->id?>">remove</a>
+            <?php if( isset($_SESSION['logged_user'])): ?>
+              <?php if(! in_array($_SESSION['logged_user']->id, json_decode($trip->upvotes ))) : ?>
+                <a class="button special" onclick="upvote(event, 'trips', <?=$trip->id?>)"><?=count(json_decode($trip->upvotes))?> | upvote</a>
+                <script src="../dist/js/upvote.js"></script>
+              <?php else: ?>
+                <a class="button"><?=count(json_decode($trip->upvotes))?> | upvoted</a>
+              <?php endif; ?>
+              <?php if( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id) : ?>
+                <a class="button hided warning" href="/action/delete/trip.php/<?=$trip->id?>">remove</a>
+              <?php endif; ?>
             <?php endif; ?>
-            <a class="button special" onclick="upvote(<?=$trip->id?>)"><?=$trip->score?> | upvote</a>
             <a class="button hided" href="/share/trip.php/<?=$trip->id?>">share</a>
             <a class="author flex horizontal" href="/user.php/<?=$user->id?>">
               <div class="flex vertical">
