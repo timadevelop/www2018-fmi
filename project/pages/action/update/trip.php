@@ -25,6 +25,24 @@ if ( $trip && $action == 'upvote' ) {
   }
   echo json_encode($trip->upvotes);
 }
+if ( $trip && $action == 'downvote' ) {
+  $newUpvotes = json_decode($trip->upvotes);
+  $uid = intval($_SESSION['logged_user']->id);
+  if( in_array($uid,$newUpvotes ))
+  {
+    $newUpvotes = array_diff($newUpvotes, array($_SESSION['logged_user']->id));
+    $trip->upvotes = json_encode($newUpvotes);
+    R::store($trip);
+  }
+  echo json_encode($trip->upvotes);
+}
+//
+// $trip = R::dispense('trips');
+//
+// $trip->title = $title;
+// $trip->img_src = $img_src;
+// $trip->is_public = $public;
+// $trip->date = $date;
 //
 // $trip = R::dispense('trips');
 //

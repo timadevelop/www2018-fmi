@@ -1,31 +1,5 @@
-// Ajax stuff
-function ajax(url, settings) {
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-    if (xhr.status == 200) {
-      settings.success(xhr.responseText);
-    } else {
-      console.error(xhr.responseText);
-    }
-  };
-  xhr.open(settings.method || 'GET', url, /* async */ true);
-  xhr.send(settings.data || null);
-}
-//
-// ajax callback
-//
-let callback = function(text) {
-  let json = JSON.parse(text);
-  if (json === null) {
-    emailInput.required = true;
-    emailInput.style.display = 'block';
-  }
-  else {
-    loginInput.style.border = '1px solid #00b27f';
-    emailInput.required = false;
-    emailInput.style.display = 'none';
-  }
-};
+import { ajax } from './functions';
+
 
 function upvote_trip(id, el) {
   ajax(`/action/update/trip.php?id=${id}&action=upvote`, {
@@ -36,13 +10,30 @@ function upvote_trip(id, el) {
       if ( json ) {
         el.textContent = json.length + ' | upvoted';
         el.classList.remove('special');
-        el.onclick = null;
+        el.onclick = (e) => window.downvote(e, 'trips', id);
       }
     },
     method: 'GET'
   });
 }
 
+function downvote_trip(id, el) {
+  ajax(`/action/update/trip.php?id=${id}&action=downvote`, {
+    success: (response) => {
+      let json = JSON.parse(JSON.parse(response));
+      if ( json ) {
+        el.textContent = json.length + ' | upvote';
+        el.classList.add('special');
+        el.onclick = (e) => window.upvote(e, 'trips', id);
+      }
+    },
+    method: 'GET'
+  });
+}
 window.upvote = function (e, collection, id) {
   upvote_trip(id, e.target);
+}
+
+window.downvote = function (e, collection, id) {
+  downvote_trip(id, e.target);
 }

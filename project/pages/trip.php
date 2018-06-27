@@ -26,11 +26,11 @@ $user = R::findOne('users', 'id = ?', array($trip->author_id));
         <hr>
           <div class="flex flex-end horizontal">
             <?php if( isset($_SESSION['logged_user'])): ?>
+              <script src="../dist/js/upvote.js"></script>
               <?php if(! in_array($_SESSION['logged_user']->id, json_decode($trip->upvotes ))) : ?>
                 <a class="button special" onclick="upvote(event, 'trips', <?=$trip->id?>)"><?=count(json_decode($trip->upvotes))?> | upvote</a>
-                <script src="../dist/js/upvote.js"></script>
               <?php else: ?>
-                <a class="button"><?=count(json_decode($trip->upvotes))?> | upvoted</a>
+                <a class="button" onclick="downvote(event, 'trips', <?=$trip->id?>)"><?=count(json_decode($trip->upvotes))?> | upvoted</a>
               <?php endif; ?>
               <?php if( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id) : ?>
                 <a class="button hided warning" href="/action/delete/trip.php/<?=$trip->id?>">remove</a>
