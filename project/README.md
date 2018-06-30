@@ -1,6 +1,8 @@
 ## Installation
 
-### Install LAMPP / XAMPP
+Get VM with ssh access, install git, lampp, mysql, php, nodejs
+
+### clone project
 
 - `cd /opt/lampp/htdocs`
 
@@ -58,7 +60,7 @@ $cfg['Servers'][$i]['controlpass'] = 'admin';
 
 ```
 
-### Go to /phpMyAdmin, login as root and create a db called nomadplan
+Go to /phpMyAdmin, login as root and create a db called nomadplan
 
 ### Change project db configuration
 
