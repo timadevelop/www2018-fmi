@@ -49,7 +49,7 @@ $user = R::findOne('users', 'id = ?', array($trip->author_id));
           <h5>
             <?=$trip->short_description?>
           </h5>
-          <span><?=$trip->date?> | score: <?=$trip->score?></span>
+          <span><?=$trip->date?></span>
         </div>
         <hr>
         <!-- <p>Description: (You can change it, we store this data to db automatically) -->
