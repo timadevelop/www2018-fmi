@@ -9,7 +9,7 @@ parse_str($query_str, $query_params);
 $page = $query_params['page'];
 $limit = $query_params['limit'];
 
-$trips=R::findAll('trips', 'ORDER BY created_at LIMIT ?,? ',array((($page-1)*$limit),$limit));
+$trips=R::findAll('trips', 'ORDER BY created_at LIMIT ?,? ',array((int)(($page-1)*$limit),(int)$limit));
 header('Content-type: application/json');
 echo json_encode($trips);
 ?>
