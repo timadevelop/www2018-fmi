@@ -496,6 +496,10 @@ i[class^="fa"] {
 .user img, .company img {
   height: 100px; }
 
+.guide video {
+  max-width: 100%;
+  margin: 20px auto; }
+
 div.trip {
   text-align: center; }
   div.trip > img {

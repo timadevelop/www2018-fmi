@@ -659,6 +659,13 @@ i[class^="fa"] {
   }
 }
 
+.guide{
+  video {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+}
+
 @import './trip.scss';
 @import './items.scss';
 @import './ui-form.scss';
