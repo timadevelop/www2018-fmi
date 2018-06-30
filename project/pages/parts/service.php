@@ -31,7 +31,7 @@
         <img class="hided" src="https://cdn.svgporn.com/logos/prettier.svg" />
       </div>
       <div class="flex flex-end horizontal">
-        <?php if( (isset($_SESSION['logged_user']) && $_SESSION['logged_user']->id == $service->company_id ) || $_SESSION['logged_user']->login == 'root') : ?>
+        <?php if( isset($_SESSION['logged_user']) && ($_SESSION['logged_user']->id == $service->company_id || $_SESSION['logged_user']->login == 'root') ) : ?>
           <a class="button hided warning" href="/action/delete/service.php/<?=$service->id?>">remove</a>
         <?php endif; ?>
         <a class="button hided" href="/share/<?=$service->id?>">share</a>
