@@ -6,11 +6,11 @@
   }
 ?>
 <li class="flex horizontal flex1">
-  <a href="/service/<?=$service->id?>">
+  <a href="/service.php/<?=$service->id?>">
     <img src="<?=(isset($service->img_src) && !empty($service->img_src) ? $service->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
   </a>
   <div class="flex space-between vertical flex3">
-    <a href="/service/<?=$service->id?>">
+    <a href="/service.php/<?=$service->id?>">
       <h4>
         <?=$service->title?>
       </h4>
@@ -18,7 +18,7 @@
     <span><?=$service->short_description?></span>
     <div class="actions flex space-between horizontal">
       <div class="author flex horizontal">
-        <a href="/company/<?=$company->login?>">
+        <a href="/company.php/<?=$company->login?>">
           <img
               alt="<?=$company->login?>"
               src="<?=(isset($company->img_src) && !empty($company->img_src) ? $company->img_src :'https://cdn.svgporn.com/logos/gatsby.svg')?>" />

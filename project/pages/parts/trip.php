@@ -20,7 +20,7 @@
     <span><?=$trip->short_description?></span>
     <div class="actions flex space-between horizontal">
       <div class="author flex horizontal">
-        <a href="/user/<?=$user->id?>">
+        <a href="/user.php/<?=$user->id?>">
           <img  alt="<?=$user->login?>" src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
         </a>
         <?php if($trip->is_public) : ?>

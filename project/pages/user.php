@@ -38,8 +38,8 @@ if ( ! $user ) {
                   ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $user->id)) : ?>
             <a class="button hided warning" href="/action/delete/user.php/<?=$user->id?>">remove</a>
             <?php endif; ?>
-            <a class="button hided" href="/share/user/<?=$user->id?>">share</a>
-            <a class="button" href="/user/<?=$user->id?>">more</a>
+            <a class="button hided" href="/share/user.php/<?=$user->id?>">share</a>
+            <a class="button" href="/user.php/<?=$user->id?>">more</a>
           </div>
         </div>
       </div>

@@ -36,10 +36,10 @@ if ( ! $company ) {
           <div class="flex center-content horizontal">
             <?php if( isset($_SESSION['logged_company']) &&
                   ( $_SESSION['logged_company']->login == 'root' || $_SESSION['logged_company']->id == $company->id)) : ?>
-            <a class="button hided warning" href="action/delete/company/<?=$company->id?>">remove</a>
+            <a class="button hided warning" href="action/delete/company.php/<?=$company->id?>">remove</a>
             <?php endif; ?>
-            <a class="button hided" href="share/company/<?=$company->id?>">share</a>
-            <a class="button" href="company/<?=$company->id?>">more</a>
+            <a class="button hided" href="share/company.php/<?=$company->id?>">share</a>
+            <a class="button" href="company.php/<?=$company->id?>">more</a>
           </div>
         </div>
       </div>
