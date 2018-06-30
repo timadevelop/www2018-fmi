@@ -16,7 +16,7 @@ function f(e, index) {
           `
             <li class="flex horizontal flex0">
               <a href="/trip.php/${e.id}">
-                <img src="${(e.img_src !== '' ? e.img_src : 'https://cdn.svgporn.com/logos/glimmerjs.svg')}" />
+                <img src="${(e.img_src !== '' ? e.img_src : '/dist/images/logos/glimmerjs.svg')}" />
               </a>
               <div class="flex space-between vertical flex3">
                 <a href="/trip.php/${e.id}">
@@ -26,14 +26,14 @@ function f(e, index) {
                 <div class="actions flex space-between horizontal">
                   <div class="author flex horizontal">
                     <a href="/user/todo">
-                      <img src="https://cdn.svgporn.com/logos/glimmerjs.svg" />
+                      <img src="/dist/images/logos/glimmerjs.svg" />
                     </a>
                     ${ e.is_public
-                    ? '<img src="https://cdn.svgporn.com/logos/unito.svg" />'
-                    : '<img src="https://cdn.svgporn.com/logos/gusto.svg" />'
+                    ? '<img src="/dist/images/logos/unito.svg" />'
+                    : '<img src="/dist/images/logos/gusto.svg" />'
                     }
-                    <img class="hided" src="${ e.img_src !== '' ? e.img_src : 'https://cdn.svgporn.com/logos/gatsby.svg' }" />
-                    <img class="hided" src="https://cdn.svgporn.com/logos/prettier.svg" />
+                    <img class="hided" src="${ e.img_src !== '' ? e.img_src : '/dist/images/logos/gatsby.svg' }" />
+                    <img class="hided" src="/dist/images/logos/prettier.svg" />
                   </div>
                   <div class="flex flex-end horizontal">
                     <!-- <?php if( isset($_SESSION['logged_user']) &&

@@ -53,7 +53,7 @@ function login() {
       }
       $img_src= trim($_POST['img_src']);
       if ( empty($img_src) ) {
-        $img_src = 'https://cdn.svgporn.com/logos/groovehq.svg';
+        $img_src = '/dist/images/logos/groovehq.svg';
       }
       $company = R::dispense('companies');
       $company->login = trim($_POST['login']);
@@ -75,7 +75,7 @@ function login() {
 <div class="mt30 block container">
   <?php include "parts/messages.php" ?>
   <form action="/login_company.php" method="POST" class="ui-form flex space-around vertical centerItems">
-    <img style="width:120px;height:111px;" src="https://cdn.svgporn.com/logos/nomad.svg" />
+    <img style="width:120px;height:111px;" src="/dist/images/logos/nomad.svg" />
     <p>Nomadplan strive to facilitate the planning and management of travel. And you can help us providing your services and gaining new clients.</p>
     <input type="text" name="login" required minlength="4" maxlength="50" placeholder="Company login" value="<?php echo @$company->login; ?>">
     <input type="text" name="name" required minlength="2" maxlength="50" placeholder="Company name" value="<?php echo @$company->name; ?>">

@@ -18,7 +18,7 @@ $short_description = trim($_POST['short_description']);
 
 if( empty($img_src) )
 {
-  $img_src = 'https://cdn.svgporn.com/logos/gusto.svg';
+  $img_src = '/dist/images/logos/gusto.svg';
 }
 if( $price == '' || $title == '' || $short_description == '')
 {

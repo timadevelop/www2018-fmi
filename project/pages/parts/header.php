@@ -26,7 +26,7 @@
       <div class="left-section flex space-between horizontal">
         <div>
         <a href="/">
-          <img src="https://cdn.svgporn.com/logos/nomad.svg"></img>
+          <img src="/dist/images/logos/nomad.svg"></img>
         </a>
         <input type="text" placeholder="Search trips, services & many more..." />
         </div>

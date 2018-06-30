@@ -53,7 +53,7 @@ function login() {
       }
       $img_src= trim($_POST['img_src']);
       if ( empty($img_src) ) {
-        $img_src = 'https://cdn.svgporn.com/logos/bigpanda.svg';
+        $img_src = '/dist/images/logos/bigpanda.svg';
       }
       $user = R::dispense('users');
       $user->login = trim($_POST['login']);
@@ -73,7 +73,7 @@ function login() {
 <div class="mt30 block container">
   <?php include "parts/messages.php" ?>
   <form action="/login.php" method="POST" class="ui-form flex space-around vertical centerItems">
-    <img style="width:120px;height:111px;" src="https://cdn.svgporn.com/logos/nomad.svg" />
+    <img style="width:120px;height:111px;" src="/dist/images/logos/nomad.svg" />
     <p>Nomadplan strive to facilitate the planning and management of travel.</p>
     <!-- <p><b>Log in</b> to try features we provide.</p> -->
     <input id="loginInput" onchange="onLoginInputChange(event)" type="text" name="login" required minlength="4" maxlength="50" placeholder="Your login" value="<?php echo @$user->login; ?>">

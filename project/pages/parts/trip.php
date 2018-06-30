@@ -9,7 +9,7 @@
 ?>
 <li class="flex horizontal flex0">
   <a href="/trip.php/<?=$trip->id?>">
-    <img src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+    <img src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
   </a>
   <div class="flex space-between vertical flex3">
     <a href="/trip.php/<?=$trip->id?>">
@@ -21,15 +21,15 @@
     <div class="actions flex space-between horizontal">
       <div class="author flex horizontal">
         <a href="/user.php/<?=$user->id?>">
-          <img  alt="<?=$user->login?>" src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+          <img  alt="<?=$user->login?>" src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
         </a>
         <?php if($trip->is_public) : ?>
-        <img src="https://cdn.svgporn.com/logos/unito.svg" />
+        <img src="/dist/images/logos/unito.svg" />
         <?php else: ?>
-        <img src="https://cdn.svgporn.com/logos/gusto.svg" />
+        <img src="/dist/images/logos/gusto.svg" />
         <?php endif; ?>
-        <img class="hided" src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'https://cdn.svgporn.com/logos/gatsby.svg')?>" />
-        <img class="hided" src="https://cdn.svgporn.com/logos/prettier.svg" />
+        <img class="hided" src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'/dist/images/logos/gatsby.svg')?>" />
+        <img class="hided" src="/dist/images/logos/prettier.svg" />
       </div>
       <div class="flex flex-end horizontal">
        <?php if( isset($_SESSION['logged_user'])): ?>

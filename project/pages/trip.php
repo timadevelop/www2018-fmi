@@ -39,12 +39,12 @@ $user = R::findOne('users', 'id = ?', array($trip->author_id));
             <a class="button hided" href="/share/trip.php/<?=$trip->id?>">share</a>
             <a class="author flex horizontal" href="/user.php/<?=$user->id?>">
               <div class="flex vertical">
-                <img class="authorImg" alt="<?=$user->login?>" src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+                <img class="authorImg" alt="<?=$user->login?>" src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
                 <small><?=$user->login?></small>
               </div>
           </a>
           </div>
-        <img src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+        <img src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
         <div class="flex space-between vertical flex3">
           <h5>
             <?=$trip->short_description?>

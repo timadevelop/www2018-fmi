@@ -27,7 +27,7 @@ if ( ! $user ) {
           Awesome user
         </h4>
         <hr>
-        <img src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+        <img src="<?=(isset($user->img_src) && !empty($user->img_src) ? $user->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
         <div class="flex space-between vertical flex3">
           <h4>
             <?=$user->login?>

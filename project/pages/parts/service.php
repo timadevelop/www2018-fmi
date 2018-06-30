@@ -7,7 +7,7 @@
 ?>
 <li class="flex horizontal flex1">
   <a href="/service.php/<?=$service->id?>">
-    <img src="<?=(isset($service->img_src) && !empty($service->img_src) ? $service->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+    <img src="<?=(isset($service->img_src) && !empty($service->img_src) ? $service->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
   </a>
   <div class="flex space-between vertical flex3">
     <a href="/service.php/<?=$service->id?>">
@@ -21,14 +21,14 @@
         <a href="/company.php/<?=$company->login?>">
           <img
               alt="<?=$company->login?>"
-              src="<?=(isset($company->img_src) && !empty($company->img_src) ? $company->img_src :'https://cdn.svgporn.com/logos/gatsby.svg')?>" />
+              src="<?=(isset($company->img_src) && !empty($company->img_src) ? $company->img_src :'/dist/images/logos/gatsby.svg')?>" />
         </a>
         <?php if($service->is_public) : ?>
-        <img class="hided" src="https://cdn.svgporn.com/logos/unito.svg" />
+        <img class="hided" src="/dist/images/logos/unito.svg" />
         <?php else: ?>
-        <img class="hided" src="https://cdn.svgporn.com/logos/gusto.svg" />
+        <img class="hided" src="/dist/images/logos/gusto.svg" />
         <?php endif; ?>
-        <img class="hided" src="https://cdn.svgporn.com/logos/prettier.svg" />
+        <img class="hided" src="/dist/images/logos/prettier.svg" />
       </div>
       <div class="flex flex-end horizontal">
         <?php if( isset($_SESSION['logged_user']) && ($_SESSION['logged_user']->id == $service->company_id || $_SESSION['logged_user']->login == 'root') ) : ?>

@@ -27,7 +27,7 @@ if ( ! $company ) {
           Awesome company
         </h4>
         <hr>
-        <img src="<?=(isset($company->img_src) && !empty($company->img_src) ? $company->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+        <img src="<?=(isset($company->img_src) && !empty($company->img_src) ? $company->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
         <div class="flex space-between vertical flex3">
           <h4>
             <?=$company->login?>

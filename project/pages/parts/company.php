@@ -1,6 +1,6 @@
 <li class="flex horizontal flex1">
   <a href="/company.php/<?=$company->id?>">
-    <img src="<?=(isset($company->img_src) && !empty($company->img_src) ? $company->img_src :'https://cdn.svgporn.com/logos/glimmerjs.svg')?>" />
+    <img src="<?=(isset($company->img_src) && !empty($company->img_src) ? $company->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
   </a>
   <div class="flex space-between vertical flex3">
     <a href="/company.php/<?=$company->id?>">

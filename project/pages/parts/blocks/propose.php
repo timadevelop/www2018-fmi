@@ -10,7 +10,7 @@
     </div>
     <div class="flex flex1"></div>
     <div class="flex flex1">
-      <img style="width:240px;height:221px;margin: 20px;" src="https://cdn.svgporn.com/logos/nomad.svg" />
+      <img style="width:240px;height:221px;margin: 20px;" src="/dist/images/logos/nomad.svg" />
     </div>
   </div>
 </div>
