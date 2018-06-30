@@ -2,6 +2,8 @@
 
 Get VM with ssh access, install git, lampp, mysql, php, nodejs
 
+Open 80 HTTP port.
+
 ### clone project
 
 - `cd /opt/lampp/htdocs`
@@ -60,13 +62,17 @@ $cfg['Servers'][$i]['controlpass'] = 'admin';
 
 ```
 
-Go to /phpMyAdmin, login as root and create a db called nomadplan
+- `cd /opt/lampp`
+
+- `sudo ./lampp restart`
+
+Go to /phpMyAdmin, login as root and create a db called nomadplan with `utf8_general_ci`
 
 ### Change project db configuration
 
 - `cd /opt/lampp/htdocs/web2018-fmi/project/pages`
 
-- `vim db.php` - change db name, username and password
+- `vim config.php` - change db name, username and password
 
 - `cd /opt/lampp/htdocs/web2018-fmi/project/`
 
