@@ -53,7 +53,7 @@ function login() {
       }
       $img_src= trim($_POST['img_src']);
       if ( empty($img_src) ) {
-        $img_src = '/dist/images/logos/groovehq.svg';
+        $img_src = '/dist/images/logos/groove.svg';
       }
       $company = R::dispense('companies');
       $company->login = trim($_POST['login']);
