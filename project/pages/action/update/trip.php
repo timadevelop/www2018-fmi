@@ -25,7 +25,7 @@ if ( $trip && $action == 'upvote' ) {
   }
   echo json_encode($trip->upvotes);
 }
-if ( $trip && $action == 'downvote' ) {
+else if ( $trip && $action == 'downvote' ) {
   $newUpvotes = json_decode($trip->upvotes);
   $uid = intval($_SESSION['logged_user']->id);
   if( in_array($uid,$newUpvotes ))
@@ -35,6 +35,16 @@ if ( $trip && $action == 'downvote' ) {
     R::store($trip);
   }
   echo json_encode($trip->upvotes);
+}
+else if ( $trip && $action == 'changeTasks' && isset($query_params['tasks'])) {
+  // print_r($query_params['tasks']);
+  // print_r(json_decode($query_params['tasks']));
+  $trip->tasks = $query_params['tasks'];
+  R::store($trip);
+  echo json_encode('Ok');
+}
+else {
+  //
 }
 //
 // $trip = R::dispense('trips');
