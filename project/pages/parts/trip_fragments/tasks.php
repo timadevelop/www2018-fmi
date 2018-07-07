@@ -8,14 +8,25 @@
   </div>
   <ul class="trip-tasks" id="trip_tasks_list">
     <?php foreach (json_decode($trip->tasks) as $item): ?>
-<?php if( $item->done == "true") : ?>
-    <li class="done" onclick="toogleDone(event, 'trip_tasks_list', <?=$trip->id?>)">
-<?php else: ?>
-    <li onclick="toogleDone(event, 'trip_tasks_list', <?=$trip->id?>)">
-<?php endif; ?>
-        <p><?=$item->text?></p>
-        <i onclick="remove(event, 'trip_tasks_list', <?=$trip->id?>)" class="fa fa-trash"></i>
-      </li>
+        <?php if( isset($_SESSION['logged_user']) && 
+          ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id)) : ?>
+            <?php if( $item->done == "true") : ?>
+                <li class="done" onclick="toogleDone(event, 'trip_tasks_list', <?=$trip->id?>)">
+            <?php else: ?>
+                <li onclick="toogleDone(event, 'trip_tasks_list', <?=$trip->id?>)">
+            <?php endif; ?>
+                    <p><?=$item->text?></p>
+                    <i onclick="remove(event, 'trip_tasks_list', <?=$trip->id?>)" class="fa fa-trash"></i>
+                  </li>
+          <?php else: ?>
+            <?php if( $item->done == "true") : ?>
+                <li class="done" onclick="toogleDone(event, 'trip_tasks_list', <?=$trip->id?>)">
+            <?php else: ?>
+              <li>
+            <?php endif; ?>
+                    <p><?=$item->text?></p>
+              </li>
+          <?php endif; ?>
     <?php endforeach; ?>
   </ul>
 
