@@ -24,8 +24,8 @@
                 <a href="/" class="author flex horizontal">
                 </a>
                 <div class="flex flex-end horizontal">
-                  <?php if( isset($_SESSION['logged_user']) &&
-                    ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->autho_id)) : ?>
+                  <?php if( isset($_SESSION['logged_user']) && $user->id != $trip->author_id &&
+                    ( $_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id)) : ?>
                     <a onclick="rmTraveler(event, <?=$user->id?>, <?=$trip->id?>)" class="button hided warning">remove from trip</a>
                   <?php endif; ?>
                   <a class="button hided" href="/share/user.php/<?=$user->id?>">share</a>

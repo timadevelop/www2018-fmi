@@ -40,8 +40,7 @@ $trip->upvotes = json_encode([$_SESSION['logged_user']->id]);
 
 $trip->scenario = json_encode(["Sofia", "London"]);
 $trip->transport = "own";
-$trip->checklist = json_encode(["Checklist item"]);
-$trip->tasks = json_encode(["Temporary task"]);
+$trip->tasks = json_encode([]);
 $trip->travelers = json_encode([$_SESSION['logged_user']->id]);
 $trip->services = json_encode(array());
 

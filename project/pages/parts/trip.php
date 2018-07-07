@@ -7,7 +7,11 @@
     // );
   }
 ?>
-<li class="flex horizontal flex0">
+
+<?php if( $trip->is_public ||
+  (isset($_SESSION['logged_user']) && ($_SESSION['logged_user']->login == 'root' || $_SESSION['logged_user']->id == $trip->author_id))
+) : ?>
+<li class="flex horizontal flex0 <?php if(!$trip->is_public) echo 'private_trip';?>">
   <a href="/trip.php/<?=$trip->id?>">
     <img src="<?=(isset($trip->img_src) && !empty($trip->img_src) ? $trip->img_src :'/dist/images/logos/glimmerjs.svg')?>" />
   </a>
@@ -15,6 +19,9 @@
     <a href="/trip.php/<?=$trip->id?>">
       <h4>
         <?=$trip->title?>
+      <?php if(! $trip -> is_public) : ?>
+        <i class="fa fa-lock"></i>
+      <?php endif; ?>
       </h4>
     </a>
     <span><?=$trip->short_description?></span>
@@ -53,3 +60,6 @@
   </div>
 
 </li>
+<?php else: ?>
+<li>Private trip</li>
+<?php endif; ?>

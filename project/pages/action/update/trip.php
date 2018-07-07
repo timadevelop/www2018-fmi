@@ -71,12 +71,14 @@ else if ( $trip && $action == 'rmTraveler' && isset($query_params['userId'])) {
   //   return;
   // }
   $result_list = json_decode($trip->travelers);
-  if( in_array($query_params['id'], $result_list) ) {
+  // if( in_array($query_params['userId'], $result_list) ) {
     // echo($result_list);
     // echo json_encode('Already in trip!' . $query_params['id']);
     // $result_list = array_diff($result_list, [$query_params['id']]);
-    unset($result_list[$query_params['id']]);
-    $trip->travelers = json_encode($result_list);
+    if (($key = array_search($query_params['userId'], $result_list)) !== false) {
+    unset($result_list[$key]);
+    // unset($result_list[$query_params['userId']]);
+    $trip->travelers = json_encode(array_values($result_list));
     R::store($trip);
     echo json_encode('Ok');
     return;
