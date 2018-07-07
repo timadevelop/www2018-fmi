@@ -59,7 +59,6 @@ $user = R::findOne('users', 'id = ?', array($trip->author_id));
             <nav id="trip-tabs" class="flex horizontal space-around">
               <a onclick="changeTab(this, 'modify-trip-scenario')" class="selected">Scenario</a>
               <a onclick="changeTab(this, 'modify-trip-transport')">Transport</a>
-              <a onclick="changeTab(this, 'modify-trip-checklist')">Checklist</a>
               <a onclick="changeTab(this, 'modify-trip-services')">Services</a>
               <a onclick="changeTab(this, 'modify-trip-tasks')">Tasks</a>
               <a onclick="changeTab(this, 'modify-trip-travelers')">Travelers</a>
@@ -68,7 +67,6 @@ $user = R::findOne('users', 'id = ?', array($trip->author_id));
             <div id="fragments">
               <?php include_once("parts/trip_fragments/scenario.php") ?>
               <?php include_once("parts/trip_fragments/transport.php") ?>
-              <?php include_once("parts/trip_fragments/checklist.php") ?>
               <?php include_once("parts/trip_fragments/services.php") ?>
               <?php include_once("parts/trip_fragments/tasks.php") ?>
               <?php include_once("parts/trip_fragments/travelers.php") ?>

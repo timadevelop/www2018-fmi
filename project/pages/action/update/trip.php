@@ -43,6 +43,46 @@ else if ( $trip && $action == 'changeTasks' && isset($query_params['tasks'])) {
   R::store($trip);
   echo json_encode('Ok');
 }
+else if ( $trip && $action == 'addTraveler' && isset($query_params['login'])) {
+  // print_r($query_params['tasks']);
+  // print_r(json_decode($query_params['tasks']));
+  $new_traveler = R::findOne('users', 'login= ?', [$query_params['login']]);
+  if ( ! $new_traveler ) {
+    echo json_encode('No such user');
+    return;
+  }
+  $result_list = json_decode($trip->travelers);
+  if( in_array($new_traveler->id, $result_list) ) {
+    echo json_encode('Already in trip!');
+    return;
+  }
+
+  $result_list[] = $new_traveler->id;
+  $trip->travelers = json_encode($result_list);
+  R::store($trip);
+  echo json_encode('Ok');
+}
+else if ( $trip && $action == 'rmTraveler' && isset($query_params['userId'])) {
+  // print_r($query_params['tasks']);
+  // print_r(json_decode($query_params['tasks']));
+  // $new_traveler = R::findOne('users', 'id = ?', [$query_params['id']]);
+  // if ( ! $new_traveler ) {
+  //   echo json_encode('No such user');
+  //   return;
+  // }
+  $result_list = json_decode($trip->travelers);
+  if( in_array($query_params['id'], $result_list) ) {
+    // echo($result_list);
+    // echo json_encode('Already in trip!' . $query_params['id']);
+    // $result_list = array_diff($result_list, [$query_params['id']]);
+    unset($result_list[$query_params['id']]);
+    $trip->travelers = json_encode($result_list);
+    R::store($trip);
+    echo json_encode('Ok');
+    return;
+  }
+  echo json_encode('No such user in trip');
+}
 else {
   //
 }
